@@ -16,85 +16,125 @@ body {
     overflow: hidden;
 }
 
-/* terminal */
+/* TERMINAL */
 #terminal {
     padding: 20px;
     white-space: pre-wrap;
     font-size: 16px;
-    line-height: 1.4;
     transition: opacity 1.5s ease;
 }
 
-/* hidden state */
 .fade-out {
     opacity: 0;
 }
 
-/* center reveal screen */
+/* MAIN UI */
 #main {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
     opacity: 0;
     transition: opacity 2s ease;
 }
 
-/* reveal active */
 #main.show {
     opacity: 1;
 }
 
-/* big text */
-.glitch {
-    font-size: 2rem;
-    color: #00ff88;
-    position: relative;
-    text-shadow:
-        0 0 5px #00ff88,
-        0 0 10px #00ff88,
-        0 0 20px #00ff88;
+/* HEADER */
+.header {
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* glitch layers */
+.glitch {
+    font-size: 2rem;
+    position: relative;
+    text-shadow: 0 0 10px #00ff88;
+}
+
 .glitch::before,
 .glitch::after {
     content: "hello my name is maxesd";
     position: absolute;
     left: 0;
-    width: 100%;
 }
 
 .glitch::before {
     color: #ff00ff;
-    animation: glitchTop 1.5s infinite;
+    animation: glitch 1s infinite;
 }
 
 .glitch::after {
     color: #00ffff;
-    animation: glitchBottom 1.5s infinite;
+    animation: glitch 1s infinite reverse;
 }
 
-/* subtitle */
+@keyframes glitch {
+    0% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    100% { transform: translate(1px, -1px); }
+}
+
 .sub {
-    margin-top: 15px;
-    font-size: 1rem;
-    color: #00ffaa;
-    opacity: 0.8;
+    margin-top: 10px;
+    opacity: 0.7;
 }
 
-/* animations */
-@keyframes glitchTop {
-    0% { transform: translate(-2px, -2px); }
-    50% { transform: translate(2px, 2px); }
-    100% { transform: translate(-2px, -2px); }
+/* TABS */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
 }
 
-@keyframes glitchBottom {
-    0% { transform: translate(2px, 2px); }
-    50% { transform: translate(-2px, -2px); }
-    100% { transform: translate(2px, 2px); }
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #00ff88;
+    transition: 0.2s;
+}
+
+.tab:hover {
+    background: #00ff88;
+    color: black;
+}
+
+.tab.active {
+    background: #00ff88;
+    color: black;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* subtle scanlines */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,255,136,0.05),
+        rgba(0,255,136,0.05) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
 }
 </style>
 </head>
@@ -104,8 +144,36 @@ body {
 <div id="terminal"></div>
 
 <div id="main">
-    <div class="glitch">hello my name is maxesd</div>
-    <div class="sub">I do cool tech stuff</div>
+    <div class="header">
+        <div class="glitch">hello my name is maxesd</div>
+        <div class="sub">I do cool tech stuff</div>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('home', this)">home</div>
+        <div class="tab" onclick="switchTab('projects', this)">projects</div>
+        <div class="tab" onclick="switchTab('about', this)">about</div>
+    </div>
+
+    <div class="content">
+        <div id="home" class="page active">
+            > welcome to my system<br><br>
+            > status: online<br>
+            > vibe: immaculate
+        </div>
+
+        <div id="projects" class="page">
+            > project_01: cool terminal stuff<br>
+            > project_02: pixel UI experiments<br>
+            > project_03: secret 👀
+        </div>
+
+        <div id="about" class="page">
+            > name: maxesd<br>
+            > specialty: tech, coding, cool stuff<br>
+            > mission: build awesome things
+        </div>
+    </div>
 </div>
 
 <script>
@@ -132,12 +200,12 @@ let i = 0;
 
 function typeLine(line, callback) {
     let j = 0;
-    let lineEl = document.createElement("div");
-    terminal.appendChild(lineEl);
+    let el = document.createElement("div");
+    terminal.appendChild(el);
 
     function typeChar() {
         if (j < line.length) {
-            lineEl.textContent += line[j];
+            el.textContent += line[j];
             j++;
             setTimeout(typeChar, 10);
         } else {
@@ -156,17 +224,21 @@ function runBoot() {
             setTimeout(runBoot, 80);
         });
     } else {
-        // pause then fade out
         setTimeout(() => {
             terminal.classList.add("fade-out");
-
-            // after fade, show main text
             setTimeout(() => {
                 main.classList.add("show");
             }, 1500);
-
         }, 800);
     }
+}
+
+function switchTab(id, el) {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+
+    el.classList.add("active");
+    document.getElementById(id).classList.add("active");
 }
 
 runBoot();
