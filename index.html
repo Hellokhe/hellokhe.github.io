@@ -3,139 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>maxsed</title>
+<title>maxesd terminal</title>
 
-<!-- Pixel-ish font -->
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: radial-gradient(circle at center, #0f172a, #020617);
-        color: #00ffcc;
-        font-family: 'Press Start 2P', monospace;
+        margin: 0;
+        background: black;
+        color: #00ff88;
+        font-family: 'Share Tech Mono', monospace;
         overflow: hidden;
     }
 
-    .container {
-        text-align: center;
-        animation: float 4s ease-in-out infinite;
+    #terminal {
+        padding: 20px;
+        white-space: pre-wrap;
+        font-size: 16px;
+        line-height: 1.4;
     }
 
-    h1 {
-        font-size: 2rem;
-        text-shadow:
-            0 0 5px #00ffcc,
-            0 0 10px #00ffcc,
-            0 0 20px #00ffcc,
-            0 0 40px #00ffcc;
-        margin-bottom: 20px;
+    .cursor {
+        display: inline-block;
+        width: 10px;
+        background: #00ff88;
+        animation: blink 1s infinite;
     }
 
-    .subtitle {
-        font-size: 0.7rem;
-        color: #7dd3fc;
-        opacity: 0.8;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-    }
-
-    /* glitch effect */
-    .glitch {
-        position: relative;
-    }
-
-    .glitch::before,
-    .glitch::after {
-        content: "hi I am maxsed";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .glitch::before {
-        color: #ff00ff;
-        z-index: -1;
-        animation: glitchTop 2s infinite linear;
-    }
-
-    .glitch::after {
-        color: #00ffff;
-        z-index: -2;
-        animation: glitchBottom 2s infinite linear;
-    }
-
-    @keyframes glitchTop {
-        0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
-        50% { clip-path: inset(0 0 60% 0); transform: translate(2px, 2px); }
-        100% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
-    }
-
-    @keyframes glitchBottom {
-        0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
-        50% { clip-path: inset(60% 0 0 0); transform: translate(-2px, -2px); }
-        100% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
-    }
-
-    /* animated stars */
-    .stars {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        overflow: hidden;
-    }
-
-    .stars span {
-        position: absolute;
-        display: block;
-        width: 2px;
-        height: 2px;
-        background: white;
-        animation: moveStars linear infinite;
-    }
-
-    @keyframes moveStars {
-        from { transform: translateY(0); }
-        to { transform: translateY(100vh); }
+    @keyframes blink {
+        0%, 50%, 100% { opacity: 1; }
+        25%, 75% { opacity: 0; }
     }
 </style>
 </head>
 
 <body>
 
-<div class="stars" id="stars"></div>
-
-<div class="container">
-    <h1 class="glitch">hi I am maxsed</h1>
-    <div class="subtitle">welcome to my terminal</div>
-</div>
+<div id="terminal"></div>
 
 <script>
-    // generate stars
-    const starsContainer = document.getElementById("stars");
+const terminal = document.getElementById("terminal");
 
-    for (let i = 0; i < 100; i++) {
-        let star = document.createElement("span");
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.animationDuration = (Math.random() * 5 + 5) + "s";
-        star.style.opacity = Math.random();
-        starsContainer.appendChild(star);
+const bootLines = [
+"[    0.0001] Booting maxOS kernel...",
+"[    0.0420] Initializing hardware...",
+"[    0.1337] Loading drivers...",
+"[    0.2567] Mounting file systems...",
+"[    0.4200] Starting network manager...",
+"[    0.6666] Connecting to secure node...",
+"[    0.7777] Authenticating...",
+"[    0.8888] Access granted.",
+"[    1.0000] Launching interface...",
+"",
+"maxOS v1.0.0",
+"--------------------------",
+""
+];
+
+let i = 0;
+
+function typeLine(line, callback) {
+    let j = 0;
+    let currentLine = document.createElement("div");
+    terminal.appendChild(currentLine);
+
+    function typeChar() {
+        if (j < line.length) {
+            currentLine.textContent += line[j];
+            j++;
+            setTimeout(typeChar, 10);
+        } else {
+            terminal.appendChild(document.createElement("br"));
+            callback();
+        }
     }
+
+    typeChar();
+}
+
+function runBootSequence() {
+    if (i < bootLines.length) {
+        typeLine(bootLines[i], () => {
+            i++;
+            setTimeout(runBootSequence, 100);
+        });
+    } else {
+        setTimeout(startMainText, 500);
+    }
+}
+
+function startMainText() {
+    const message = "hello my name is maxesd\nI do cool tech stuff";
+    let index = 0;
+
+    let line = document.createElement("div");
+    terminal.appendChild(line);
+
+    function typeMessage() {
+        if (index < message.length) {
+            line.textContent += message[index];
+            index++;
+            setTimeout(typeMessage, 30);
+        } else {
+            addCursor();
+        }
+    }
+
+    typeMessage();
+}
+
+function addCursor() {
+    const cursor = document.createElement("span");
+    cursor.classList.add("cursor");
+    terminal.appendChild(cursor);
+}
+
+runBootSequence();
 </script>
 
 </body>
