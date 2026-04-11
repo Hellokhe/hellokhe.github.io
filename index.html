@@ -8,32 +8,94 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        background: black;
-        color: #00ff88;
-        font-family: 'Share Tech Mono', monospace;
-        overflow: hidden;
-    }
+body {
+    margin: 0;
+    background: black;
+    color: #00ff88;
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+}
 
-    #terminal {
-        padding: 20px;
-        white-space: pre-wrap;
-        font-size: 16px;
-        line-height: 1.4;
-    }
+/* terminal */
+#terminal {
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 16px;
+    line-height: 1.4;
+    transition: opacity 1.5s ease;
+}
 
-    .cursor {
-        display: inline-block;
-        width: 10px;
-        background: #00ff88;
-        animation: blink 1s infinite;
-    }
+/* hidden state */
+.fade-out {
+    opacity: 0;
+}
 
-    @keyframes blink {
-        0%, 50%, 100% { opacity: 1; }
-        25%, 75% { opacity: 0; }
-    }
+/* center reveal screen */
+#main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+/* reveal active */
+#main.show {
+    opacity: 1;
+}
+
+/* big text */
+.glitch {
+    font-size: 2rem;
+    color: #00ff88;
+    position: relative;
+    text-shadow:
+        0 0 5px #00ff88,
+        0 0 10px #00ff88,
+        0 0 20px #00ff88;
+}
+
+/* glitch layers */
+.glitch::before,
+.glitch::after {
+    content: "hello my name is maxesd";
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.glitch::before {
+    color: #ff00ff;
+    animation: glitchTop 1.5s infinite;
+}
+
+.glitch::after {
+    color: #00ffff;
+    animation: glitchBottom 1.5s infinite;
+}
+
+/* subtitle */
+.sub {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #00ffaa;
+    opacity: 0.8;
+}
+
+/* animations */
+@keyframes glitchTop {
+    0% { transform: translate(-2px, -2px); }
+    50% { transform: translate(2px, 2px); }
+    100% { transform: translate(-2px, -2px); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, -2px); }
+    100% { transform: translate(2px, 2px); }
+}
 </style>
 </head>
 
@@ -41,8 +103,14 @@
 
 <div id="terminal"></div>
 
+<div id="main">
+    <div class="glitch">hello my name is maxesd</div>
+    <div class="sub">I do cool tech stuff</div>
+</div>
+
 <script>
 const terminal = document.getElementById("terminal");
+const main = document.getElementById("main");
 
 const bootLines = [
 "[    0.0001] Booting maxOS kernel...",
@@ -64,12 +132,12 @@ let i = 0;
 
 function typeLine(line, callback) {
     let j = 0;
-    let currentLine = document.createElement("div");
-    terminal.appendChild(currentLine);
+    let lineEl = document.createElement("div");
+    terminal.appendChild(lineEl);
 
     function typeChar() {
         if (j < line.length) {
-            currentLine.textContent += line[j];
+            lineEl.textContent += line[j];
             j++;
             setTimeout(typeChar, 10);
         } else {
@@ -81,44 +149,27 @@ function typeLine(line, callback) {
     typeChar();
 }
 
-function runBootSequence() {
+function runBoot() {
     if (i < bootLines.length) {
         typeLine(bootLines[i], () => {
             i++;
-            setTimeout(runBootSequence, 100);
+            setTimeout(runBoot, 80);
         });
     } else {
-        setTimeout(startMainText, 500);
+        // pause then fade out
+        setTimeout(() => {
+            terminal.classList.add("fade-out");
+
+            // after fade, show main text
+            setTimeout(() => {
+                main.classList.add("show");
+            }, 1500);
+
+        }, 800);
     }
 }
 
-function startMainText() {
-    const message = "hello my name is maxesd\nI do cool tech stuff";
-    let index = 0;
-
-    let line = document.createElement("div");
-    terminal.appendChild(line);
-
-    function typeMessage() {
-        if (index < message.length) {
-            line.textContent += message[index];
-            index++;
-            setTimeout(typeMessage, 30);
-        } else {
-            addCursor();
-        }
-    }
-
-    typeMessage();
-}
-
-function addCursor() {
-    const cursor = document.createElement("span");
-    cursor.classList.add("cursor");
-    terminal.appendChild(cursor);
-}
-
-runBootSequence();
+runBoot();
 </script>
 
 </body>
