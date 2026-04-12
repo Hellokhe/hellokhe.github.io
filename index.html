@@ -1,248 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>maxesd terminal</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
-<style>
-body {
-    margin: 0;
-    background: black;
-    color: #00ff88;
-    font-family: 'Share Tech Mono', monospace;
-    overflow: hidden;
-}
-
-/* TERMINAL */
-#terminal {
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 16px;
-    transition: opacity 1.5s ease;
-}
-
-.fade-out {
-    opacity: 0;
-}
-
-/* MAIN UI */
-#main {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transition: opacity 2s ease;
-}
-
-#main.show {
-    opacity: 1;
-}
-
-/* HEADER */
-.header {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.glitch {
-    font-size: 2rem;
-    position: relative;
-    text-shadow: 0 0 10px #00ff88;
-}
-
-.glitch::before,
-.glitch::after {
-    content: "hello my name is maxesd";
-    position: absolute;
-    left: 0;
-}
-
-.glitch::before {
-    color: #ff00ff;
-    animation: glitch 1s infinite;
-}
-
-.glitch::after {
-    color: #00ffff;
-    animation: glitch 1s infinite reverse;
-}
-
-@keyframes glitch {
-    0% { transform: translate(1px, -1px); }
-    50% { transform: translate(-1px, 1px); }
-    100% { transform: translate(1px, -1px); }
-}
-
-.sub {
-    margin-top: 10px;
-    opacity: 0.7;
-}
-
-/* TABS */
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    gap: 20px;
-}
-
-.tab {
-    cursor: pointer;
-    padding: 10px 20px;
-    border: 1px solid #00ff88;
-    transition: 0.2s;
-}
-
-.tab:hover {
-    background: #00ff88;
-    color: black;
-}
-
-.tab.active {
-    background: #00ff88;
-    color: black;
-}
-
-/* CONTENT */
-.content {
-    flex: 1;
-    padding: 40px;
-    text-align: center;
-}
-
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-/* subtle scanlines */
-body::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(0,255,136,0.05),
-        rgba(0,255,136,0.05) 1px,
-        transparent 1px,
-        transparent 3px
-    );
-    pointer-events: none;
-}
-</style>
-</head>
-
-<body>
-
-<div id="terminal"></div>
-
-<div id="main">
-    <div class="header">
-        <div class="glitch">hello my name is maxesd</div>
-        <div class="sub">I do cool tech stuff</div>
-    </div>
-
-    <div class="tabs">
-        <div class="tab active" onclick="switchTab('home', this)">home</div>
-        <div class="tab" onclick="switchTab('projects', this)">projects</div>
-        <div class="tab" onclick="switchTab('about', this)">about</div>
-    </div>
-
-    <div class="content">
-        <div id="home" class="page active">
-            > welcome to my system<br><br>
-            > status: online<br>
-            > vibe: immaculate
-        </div>
-
-        <div id="projects" class="page">
-            > project_01: cool terminal stuff<br>
-            > project_02: pixel UI experiments<br>
-            > project_03: secret 👀
-        </div>
-
-        <div id="about" class="page">
-            > name: maxesd<br>
-            > specialty: tech, coding, cool stuff<br>
-            > mission: build awesome things
-        </div>
-    </div>
-</div>
-
-<script>
-const terminal = document.getElementById("terminal");
-const main = document.getElementById("main");
-
-const bootLines = [
-"[    0.0001] Booting maxOS kernel...",
-"[    0.0420] Initializing hardware...",
-"[    0.1337] Loading drivers...",
-"[    0.2567] Mounting file systems...",
-"[    0.4200] Starting network manager...",
-"[    0.6666] Connecting to secure node...",
-"[    0.7777] Authenticating...",
-"[    0.8888] Access granted.",
-"[    1.0000] Launching interface...",
-"",
-"maxOS v1.0.0",
-"--------------------------",
-""
-];
-
-let i = 0;
-
-function typeLine(line, callback) {
-    let j = 0;
-    let el = document.createElement("div");
-    terminal.appendChild(el);
-
-    function typeChar() {
-        if (j < line.length) {
-            el.textContent += line[j];
-            j++;
-            setTimeout(typeChar, 10);
-        } else {
-            terminal.appendChild(document.createElement("br"));
-            callback();
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxes Repository</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-    }
-
-    typeChar();
-}
-
-function runBoot() {
-    if (i < bootLines.length) {
-        typeLine(bootLines[i], () => {
-            i++;
-            setTimeout(runBoot, 80);
-        });
-    } else {
-        setTimeout(() => {
-            terminal.classList.add("fade-out");
-            setTimeout(() => {
-                main.classList.add("show");
-            }, 1500);
-        }, 800);
-    }
-}
-
-function switchTab(id, el) {
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-
-    el.classList.add("active");
-    document.getElementById(id).classList.add("active");
-}
-
-runBoot();
-</script>
-
+        .container {
+            text-align: center;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        a {
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 12px;
+            background: #3b82f6;
+            color: white;
+            font-weight: bold;
+            transition: 0.2s ease;
+        }
+        a:hover {
+            background: #2563eb;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Maxes Repository</h1>
+        <p>Add this repo to your favorite package manager</p>
+        <div class="buttons">
+            <!-- Replace https://hellokhe.github.io/ with your actual repo URL -->
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://hellokhe.github.io/">Add to Cydia</a>
+            <a href="sileo://source/https://hellokhe.github.io/">Add to Sileo</a>
+            <a href="zbra://sources/add/https://hellokhe.github.io/">Add to Zebra</a>
+        </div>
+    </div>
 </body>
 </html>
