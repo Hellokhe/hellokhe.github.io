@@ -11,8 +11,8 @@ SHA256: edcf94979c64c1dbaa1e56b181afdf26be4083f8aed62b4761b75cc480c46ac7
 Description: test package
 Name: Test Package
 Author: Max
-SileoDepiction: https://hellokhe.github.io/sileodepictions/com.struggling.darkify/depiction.json
-Depiction: https://hellokhe.github.io/depictions/?p=com.struggling.darkify
+SileoDepiction: https://hellokhe.github.io/sileodepictions/com.max.test/depiction.json
+Depiction: https://hellokhe.github.io/depictions/?p=com.max.test
 Icon: https://mastersenseigenetics.com/wp-content/uploads/2021/04/UnderConstruction.jpeg
 
 Package: com.marcuszhou.NineAnimator
