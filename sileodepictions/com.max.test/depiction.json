@@ -1,6 +1,6 @@
 {
 	"minVersion": "0.1",
-	"headerImage": "https://raw.githubusercontent.com/thestrugglingdoge/repo/gh-pages/assets/Banners/Darkify.png",
+	"headerImage": "https://raw.githubusercontent.com/hellokhe/repo/gh-pages/assets/Banners/Darkify.png",
 	"tintColor": "#3f4042",
 	"tabs": [
 		{
@@ -12,8 +12,8 @@
 					"screenshots": [
 						{
 							"accessibilityText": "Showcase",
-							"url": "https://raw.githubusercontent.com/thestrugglingdoge/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png",
-							"fullSizeURL": "https://raw.githubusercontent.com/thestrugglingdoge/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png"
+							"url": "https://raw.githubusercontent.com/hellokhe/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png",
+							"fullSizeURL": "https://raw.githubusercontent.com/hellokhe/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png"
 						}
 					],
 					"ipad": {
@@ -22,8 +22,8 @@
 						"screenshots": [
 							{
 								"accessibilityText": "Showcase",
-								"url": "https://raw.githubusercontent.com/thestrugglingdoge/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png?size=640",
-								"fullSizeURL": "https://raw.githubusercontent.com/thestrugglingdoge/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png"
+								"url": "https://raw.githubusercontent.com/hellokhe/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png?size=640",
+								"fullSizeURL": "https://raw.githubusercontent.com/hellokhe/repo/gh-pages/depictions/com.struggling.darkify/screenshots/s1.png"
 							}
 						],
 						"class": "DepictionScreenshotView"
@@ -32,7 +32,7 @@
 				},
 				{
 					"class": "DepictionMarkdownView",
-					"markdown": "## Darkify\nDarkify is a dark theme for all iOS devices that keeps all icons fimiliar looking but with a dark grey gradient and adds a bit more depth to the icons."
+					"markdown": "# test package"
 				},
 				{
 					"title": "Suggest icons here!",
@@ -92,7 +92,7 @@
 					"class": "DepictionSubheaderView"
 				},
 				{
-					"markdown": "\t\n\u2022 Adds 35+ new icons.",
+					"markdown": "\u2022 test package",
 					"useSpacing": false,
 					"class": "DepictionMarkdownView"
 				},
