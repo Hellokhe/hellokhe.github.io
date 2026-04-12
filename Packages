@@ -2,7 +2,7 @@ Package: com.struggling.darkify
 Version: 0.2-2
 Section: Themes
 Maintainer: StrugglingDoge
-Architecture: iphoneos-arm
+Architecture: iphoneos-arm64
 Filename: ./debs/com.struggling.darkify.deb
 Size: 4536920
 MD5sum: e7afb25b6099249cb94182f36bd132bb
@@ -20,7 +20,7 @@ Version: 1.0.3
 Section: Mutlimedia
 Maintainer: StrugglingDoge
 Depends: firmware (>=11.2)
-Architecture: iphoneos-arm
+Architecture: iphoneos-arm64
 Filename: ./debs/com.marcuszhou.NineAnimator.deb
 Size: 99002536
 MD5sum: fb6c906d427ac2a77ec23c5b5788384e
