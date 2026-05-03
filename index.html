@@ -3,24 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>zenOS Wiki</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css">
-  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">Loading...</div>
-  <script>
-    window.$docsify = {
-      name: 'zenOS Wiki',
-      repo: 'https://github.com/Hellokhe/hellokhe.github.io',
-      loadSidebar: true
-        
-      darklightTheme: {
-        defaultTheme: 'dark',
-        siteFont: 'system-ui',
-        codeFontFamily: 'monospace'
-      }
-    }
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+<div class="sidebar">
+  <h2>zenOS</h2>
+  <a href="#" onclick="loadPage('intro')">Intro</a>
+  <a href="#" onclick="loadPage('install')">Install</a>
+  <a href="#" onclick="loadPage('architecture')">Architecture</a>
+</div>
+
+<div class="content" id="content">
+  <h1>Welcome to zenOS Wiki</h1>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
