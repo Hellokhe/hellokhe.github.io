@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: #0d1117;
+  color: #c9d1d9;
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background: #161b22;
+  height: 100vh;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #58a6ff;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 40px;
+  flex: 1;
+}
