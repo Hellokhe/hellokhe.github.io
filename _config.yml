@@ -1,0 +1,13 @@
+title: ZenOS Wiki
+description: Bare-metal OS with userspace and X11
+theme: just-the-docs
+
+color_scheme: dark
+
+url: https://hellokhe.github.io
+
+nav_enabled: true
+search_enabled: true
+
+# Sidebar order
+nav_sort: case_sensitive
