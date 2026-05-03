@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>zenOS Wiki</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css">
+  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
 </head>
 <body>
   <div id="app">Loading...</div>
@@ -12,6 +13,12 @@
       name: 'zenOS Wiki',
       repo: 'https://github.com/Hellokhe/hellokhe.github.io',
       loadSidebar: true
+        
+      darklightTheme: {
+        defaultTheme: 'dark',
+        siteFont: 'system-ui',
+        codeFontFamily: 'monospace'
+      }
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
