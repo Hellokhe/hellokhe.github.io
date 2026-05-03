@@ -1,6 +1,6 @@
 title: ZenOS Wiki
 description: Bare-metal OS with userspace and X11
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 color_scheme: dark
 
