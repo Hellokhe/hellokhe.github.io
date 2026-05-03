@@ -3,7 +3,7 @@ title: Overview
 nav_order: 1
 ---
 
-{: .warning }
+> [!WARNING]
 > zenOS is still in heavy W.I.P! It has not been released to the public yet.
 
 # Overview
