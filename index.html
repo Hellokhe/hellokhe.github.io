@@ -9,9 +9,23 @@
 
 <div class="sidebar">
   <h2>zenOS</h2>
-  <a href="#" onclick="loadPage('intro')">Intro</a>
-  <a href="#" onclick="loadPage('install')">Install</a>
-  <a href="#" onclick="loadPage('architecture')">Architecture</a>
+
+  <p class="section">General</p>
+  <a onclick="loadPage('intro')">Overview</a>
+  <a onclick="loadPage('features')">Features</a>
+
+  <p class="section">Setup</p>
+  <a onclick="loadPage('install')">Requirements</a>
+  <a onclick="loadPage('build-run')">Build & Run</a>
+
+  <p class="section">System</p>
+  <a onclick="loadPage('doom')">DOOM</a>
+  <a onclick="loadPage('elf')">ELF Apps</a>
+  <a onclick="loadPage('ports')">Ports</a>
+
+  <p class="section">Dev</p>
+  <a onclick="loadPage('zenthon')">Zenthon</a>
+  <a onclick="loadPage('structure')">Project Structure</a>
 </div>
 
 <div class="content" id="content">
