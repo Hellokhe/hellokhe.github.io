@@ -3,6 +3,9 @@ title: Overview
 nav_order: 1
 ---
 
+{: .warning }
+> zenOS is still in heavy W.I.P! It has not been released to the public yet.
+
 # Overview
 
 ZenOS is a real bare-metal OS with a graphical desktop environment.
