@@ -9,7 +9,7 @@ ZenOS supports running ELF64 binaries.
 
 ## Usage
 
-``zash
+``
 elf HELLO.ELF
 elfu shell
 ``

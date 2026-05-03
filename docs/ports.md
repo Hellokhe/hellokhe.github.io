@@ -8,7 +8,7 @@ nav_order: 6
 ZenOS can build real userspace software.
 
 ## Setup
-``zash
+``
 make ports-sysroot
 make ports-env
 ``
@@ -21,7 +21,7 @@ make ports-env
 
 ## X11 Support
 
-``zash
+``
 x11-desktop
 ``
 
