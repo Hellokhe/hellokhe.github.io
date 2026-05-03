@@ -18,7 +18,7 @@ ZenOS runs with privilege separation:
 
 ## Status
 
-- Ring 3: ✅
-- ELF: ✅
-- X11: ✅
-- Full syscall layer: WIP
+- Ring 3: yea
+- ELF: yep
+- X11: yes
+- Full syscall layer: idk

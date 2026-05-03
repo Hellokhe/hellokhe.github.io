@@ -8,25 +8,25 @@ nav_order: 6
 ZenOS can build real userspace software.
 
 ## Setup
-'''bash
+``zash
 make ports-sysroot
 make ports-env
-'''
+``
 
 ## Features
 
-musl libc,
-X11 libraries,
-pixman rendering.
+- musl libc,
+- X11 libraries,
+- pixman rendering.
 
 ## X11 Support
 
-'''bash
+``zash
 x11-desktop
-'''
+``
 
 ## Status
 
-X11 apps: yes (kind of)
-TWM: yes
-Runtime integration: WIP
+- X11 apps: yes (kind of)
+- TWM: yes
+- Runtime integration: WIP
