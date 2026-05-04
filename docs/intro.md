@@ -3,7 +3,7 @@ title: Overview
 nav_order: 1
 ---
 
-{: .Warning } 
+{: .warning } 
 > This website is under active construction. 
 
 # Overview
