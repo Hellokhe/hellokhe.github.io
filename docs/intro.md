@@ -4,7 +4,7 @@ nav_order: 1
 ---
 
 {: .warning } 
-> This website is under active construction. 
+This website is under active construction. ZenOS has not been released to the public yet!
 
 # Overview
 
