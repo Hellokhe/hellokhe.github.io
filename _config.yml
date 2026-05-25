@@ -18,7 +18,7 @@ callouts:
     color: yellow
 
 collections:
-  tests:
+  features:
     output: true
 
 just_the_docs:
