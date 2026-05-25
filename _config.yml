@@ -16,3 +16,9 @@ callouts:
   warning:
     title: Warning
     color: yellow
+
+just_the_docs:
+  collections:
+    features:
+      name: Features
+      nav_fold: true
