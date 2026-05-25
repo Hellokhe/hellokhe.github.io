@@ -27,6 +27,6 @@ x11-desktop
 
 ## Status
 
-- X11 apps: yes (kind of)
+- X11 apps: yes
 - TWM: yes
-- Runtime integration: WIP
+- Runtime integration: eh idk i havent checked lol
