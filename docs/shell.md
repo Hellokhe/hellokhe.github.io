@@ -1,4 +1,4 @@
-# bash/sh in ZenOS
+# Bash and sh
 
 ZenOS provides basic shell support through `bash` and `sh`.
 
