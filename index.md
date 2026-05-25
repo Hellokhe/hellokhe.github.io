@@ -22,6 +22,6 @@ No Linux, No backbone OS! Just your zenOS kernel running everything. :D
 
 ## Quick Links
 
-- [Overview](docs/intro)
+- [Shells](features/shell)
 - [Build & Run](docs/build-run)
 - [Architecture](docs/architecture)
