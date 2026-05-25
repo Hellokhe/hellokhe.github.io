@@ -16,6 +16,9 @@ callouts:
   warning:
     title: Warning
     color: yellow
+  hint:
+    title: Hint
+    color: yellow
 
 collections:
   features:

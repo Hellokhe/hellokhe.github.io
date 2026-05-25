@@ -30,7 +30,7 @@ Install:
 
 **Windows:**
 
-{: .warning } 
+{: .hint } 
 Hint: Use WSL!
 
 That’s it. (Thank me for making it easy!)
