@@ -10,8 +10,10 @@ layout: home
 - Ring 3 userspace
 - ELF execution
 - Experimental X11 + TWM support
+- Experimental coreutils
+- W.I.P custom X11 apps
 
-No Linux. No host OS. Just your kernel running everything.
+No Linux, No backbone OS! Just your zenOS kernel running everything. :D
 
 ---
 
