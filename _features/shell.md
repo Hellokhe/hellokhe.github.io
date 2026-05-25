@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Bash and sh"
+---
+
 # Bash and sh
 
 ZenOS provides basic shell support through `bash` and `sh`.
