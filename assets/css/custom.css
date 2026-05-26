@@ -3,8 +3,8 @@ body,
 body *,
 body *::before,
 body *::after {
-    background: #000 !important;
-    background-color: #000 !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
     background-image: none !important;
     background-blend-mode: normal !important;
     filter: none !important;
@@ -19,7 +19,7 @@ body {
 }
 
 *:not(code):not(pre):not(svg):not(path) {
-    border-color: #000 !important;
+    border-color: #000000 !important;
 }
 
 p,
@@ -62,9 +62,9 @@ textarea,
 select,
 button,
 .search-input {
-    background: #000 !important;
+    background: #000000 !important;
     color: #fff !important;
-    border: 1px solid #222 !important;
+    border: 1px solid #000000 !important;
 }
 
 code,
