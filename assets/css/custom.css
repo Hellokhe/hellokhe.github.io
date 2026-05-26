@@ -1,4 +1,4 @@
-body, .site-nav, .site-header, .site-footer, .main-content-wrap {
+body, .site-nav, .site-header, .site-footer, .main-content-wrap, p, li, span, div {
     background-color: #000000 !important;
     color: #e0e0e0 !important;
 }
@@ -8,7 +8,7 @@ body, .site-nav, .site-header, .site-footer, .main-content-wrap {
     border-right: 1px solid #1a1a1a !important;
 }
 
-h1, h2, h3, h4, h5, h6, .site-title {
+h1, h2, h3, h4, h5, h6, .site-title, strong, b {
     color: #ffffff !important;
 }
 
@@ -27,7 +27,7 @@ a, .nav-list-link {
     border: 1px solid #222222 !important;
 }
 
-code, pre {
+code, pre, pre span {
     background-color: #0a0a0a !important;
     color: #ffb74d !important;
     border: 1px solid #222222 !important;
