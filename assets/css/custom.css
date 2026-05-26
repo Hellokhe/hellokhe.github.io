@@ -1,9 +1,13 @@
-*,
-*::before,
-*::after {
-    background: #000000 !important;
-    background-color: #000000 !important;
+html,
+body,
+body *,
+body *::before,
+body *::after {
+    background: #000 !important;
+    background-color: #000 !important;
     background-image: none !important;
+    background-blend-mode: normal !important;
+    filter: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
     backdrop-filter: none !important;
@@ -11,8 +15,11 @@
 
 html,
 body {
-    background: #000000 !important;
     color: #e0e0e0 !important;
+}
+
+*:not(code):not(pre):not(svg):not(path) {
+    border-color: #000 !important;
 }
 
 p,
@@ -37,7 +44,7 @@ strong,
 b,
 .site-title,
 .search-label {
-    color: #ffffff !important;
+    color: #fff !important;
 }
 
 a,
@@ -47,7 +54,7 @@ a,
 
 a.active,
 .nav-list-link.active {
-    color: #ffffff !important;
+    color: #fff !important;
 }
 
 input,
@@ -55,23 +62,29 @@ textarea,
 select,
 button,
 .search-input {
-    background: #000000 !important;
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    border-color: #222222 !important;
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #222 !important;
 }
 
 code,
 pre,
 code *,
 pre * {
+    background: #000 !important;
     color: #ffb74d !important;
-    background: #000000 !important;
-    background-color: #000000 !important;
 }
 
 pre,
 code {
     border-color: inherit !important;
     outline-color: inherit !important;
+}
+
+svg,
+img,
+video,
+canvas,
+iframe {
+    background: transparent !important;
 }
