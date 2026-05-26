@@ -1,10 +1,5 @@
-body, 
-.site-nav, 
-.site-header, 
-.site-footer, 
-.main-content-wrap, 
-.main-content {
-  background-color: #000000 !important;
+body, .site-nav, .site-header, .main-header, .site-footer, .main-content-wrap, .main-content {
+    background-color: #000000 !important;
 }
 
 .side-bar {
