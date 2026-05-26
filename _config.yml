@@ -2,8 +2,6 @@ title: ZenOS Wiki
 description: Bare-metal OS with userspace and X11
 remote_theme: just-the-docs/just-the-docs
 
-color_scheme: black
-
 url: https://hellokhe.github.io
 
 nav_enabled: true
