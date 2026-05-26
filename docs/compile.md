@@ -27,10 +27,11 @@ Install:
 * gcc or x86_64-elf-gcc
 * xorriso
 * qemu-system-x86
+* stuff like that ig? I haven't compiled this on linux!
 
 **Windows:**
 
 {: .hint } 
-Hint: Use WSL!
+Use WSL!
 
 That’s it. (Thank me for making it easy!)
