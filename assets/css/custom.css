@@ -1,6 +1,10 @@
-body, .site-nav, .site-header, .site-footer, .main-content-wrap, p, li, span, div {
+body, 
+.site-nav, 
+.site-header, 
+.site-footer, 
+.main-content-wrap, 
+.main-content {
     background-color: #000000 !important;
-    color: #e0e0e0 !important;
 }
 
 .side-bar {
@@ -8,7 +12,11 @@ body, .site-nav, .site-header, .site-footer, .main-content-wrap, p, li, span, di
     border-right: 1px solid #1a1a1a !important;
 }
 
-h1, h2, h3, h4, h5, h6, .site-title, strong, b {
+p, li, span, ul, ol, td, th {
+    color: #e0e0e0 !important;
+}
+
+h1, h2, h3, h4, h5, h6, .site-title, .search-label, strong, b {
     color: #ffffff !important;
 }
 
@@ -30,5 +38,4 @@ a, .nav-list-link {
 code, pre, pre span {
     background-color: #0a0a0a !important;
     color: #ffb74d !important;
-    border: 1px solid #222222 !important;
 }
