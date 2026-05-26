@@ -7,8 +7,8 @@ url: https://hellokhe.github.io
 nav_enabled: true
 search_enabled: true
 
-# Sidebar order
 nav_sort: case_sensitive
+custom_css: "/assets/css/custom.css"
 
 callouts:
   warning:
