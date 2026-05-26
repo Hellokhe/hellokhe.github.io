@@ -1,24 +1,20 @@
-html,
-body,
-body *,
-.site-nav,
-.site-header,
-.main-header,
-.site-footer,
-.main-content-wrap,
-.main-content,
-.side-bar {
+*,
+*::before,
+*::after {
     background: #000000 !important;
     background-color: #000000 !important;
     background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
 }
 
-.side-bar {
-    background-color: #050505 !important;
-    border-right: 1px solid #1a1a1a !important;
+html,
+body {
+    background: #000000 !important;
+    color: #e0e0e0 !important;
 }
 
-body,
 p,
 li,
 span,
@@ -37,10 +33,10 @@ h3,
 h4,
 h5,
 h6,
-.site-title,
-.search-label,
 strong,
-b {
+b,
+.site-title,
+.search-label {
     color: #ffffff !important;
 }
 
@@ -52,14 +48,15 @@ a,
 a.active,
 .nav-list-link.active {
     color: #ffffff !important;
-    background-color: #111111 !important;
 }
 
 input,
 textarea,
 select,
+button,
 .search-input {
-    background-color: #111111 !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
     color: #ffffff !important;
     border-color: #222222 !important;
 }
@@ -69,30 +66,12 @@ pre,
 code *,
 pre * {
     color: #ffb74d !important;
-    background-color: #0a0a0a !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
 }
 
 pre,
 code {
     border-color: inherit !important;
     outline-color: inherit !important;
-}
-
-table,
-tr,
-thead,
-tbody {
-    background-color: #000000 !important;
-}
-
-button {
-    background-color: #111111 !important;
-    color: #ffffff !important;
-    border-color: #222222 !important;
-}
-
-* {
-    box-shadow: none !important;
-    text-shadow: none !important;
-    backdrop-filter: none !important;
 }
