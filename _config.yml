@@ -8,7 +8,43 @@ nav_enabled: true
 search_enabled: true
 
 nav_sort: case_sensitive
-custom_css: "/assets/css/custom.css"
+# 1. Force the theme to explicitly drop native text configurations
+theme: nil
+
+# 2. Inject global, inline stylesheet overrides directly to the HTML headers
+head_html: |
+  <style>
+    body, .site-nav, .site-header, .site-footer, .main-content-wrap, .main-content {
+        background-color: #000000 !important;
+    }
+    .side-bar {
+        background-color: #050505 !important;
+        border-right: 1px solid #1a1a1a !important;
+    }
+    p, li, span, ul, ol, td, th, div, .main-content p, .main-content li {
+        color: #ffffff !important;
+    }
+    h1, h2, h3, h4, h5, h6, .site-title, .search-label, strong, b, .main-content h1, .main-content h2 {
+        color: #ffffff !important;
+    }
+    a, .nav-list-link {
+        color: #64b5f6 !important;
+    }
+    .nav-list-link.active {
+        color: #ffffff !important;
+        background-color: #111111 !important;
+    }
+    .search-input {
+        background-color: #111111 !important;
+        color: #ffffff !important;
+        border: 1px solid #222222 !important;
+    }
+    code, pre, pre span {
+        background-color: #0a0a0a !important;
+        color: #ffb74d !important;
+    }
+  </style>
+
 
 callouts:
   warning:
