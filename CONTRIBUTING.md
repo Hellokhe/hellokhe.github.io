@@ -1,4 +1,4 @@
-# Contributing to ZenOS
+# Contributing to ZenOS Wiki
 Hey, thanks for jumping in and helping with the ZenOS Wiki. Seriously, every little edit helps. We’re just trying to make the docs actually useful instead of confusing garbage.
 Here’s the deal:
 
