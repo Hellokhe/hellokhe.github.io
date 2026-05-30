@@ -36,6 +36,6 @@ Tips:
 
 Even doing one page helps a ton!
 
-6. Last Thing
+## 6. Last Thing
 We really appreciate the help, but I might edit your stuff or reject it if it doesn’t fit. This wiki is supposed to be clean and useful, not a mess.
 That’s it. Thanks again for contributing!
