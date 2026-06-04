@@ -6,11 +6,11 @@ layout: default
 
 # ELF Applications
 
-ZenOS supports running ELF64 binaries.
+ZenOS supports running ELF64 binaries!
 
 ## Usage
 
 ```
-elf HELLO.ELF
-elfu shell
+UTICK.ELF
+UHELLO.ELF
 ```
