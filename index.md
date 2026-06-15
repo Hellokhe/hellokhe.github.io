@@ -12,9 +12,10 @@ This website is under active construction. ZenOS has not been released to the pu
 
 - Ring 3 userspace
 - ELF execution
-- Experimental X11 + TWM support
+- Experimental X11 + TWM/JWM support
 - Experimental coreutils
-- W.I.P custom X11 apps
+- Custom X11 apps
+- And more!
 
 No Linux, No backbone OS! Just your zenOS kernel running everything. :D
 
