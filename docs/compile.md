@@ -27,6 +27,7 @@ and hdiutil
 Install:
 
 * x86_64-elf-gcc
+* gcc or clang
 * x86_64-elf-binutils
 * make
 * ninja
@@ -35,8 +36,16 @@ Install:
 * tar
 * python3
 * xorriso
-* qemu
-* pretending mount is hdiutil
+* qemu-system-x86_64
+* mtools
+* gzip
+* bzip2
+* xz
+* git
+* patch
+* flex
+* bisom
+* texinfo
 
 **Windows:**
 
