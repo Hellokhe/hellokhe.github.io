@@ -18,16 +18,25 @@ make run
 **macOS:**
 
 ```bash
-brew install x86_64-elf-gcc xorriso qemu
+brew install x86_64-elf-gcc x86_64-elf-binutils make ninja pkg-config curl tar python3 xorriso qemu
 ```
+
+and hdiutil
 
 **Linux:**
 Install:
 
-* gcc or x86_64-elf-gcc
+* x86_64-elf-gcc
+* x86_64-elf-binutils
+* make
+* ninja
+* pkg-config
+* curl
+* tar
+* python3
 * xorriso
-* qemu-system-x86
-* stuff like that ig? I haven't compiled this on linux!
+* qemu
+* pretending mount is hdiutil
 
 **Windows:**
 
