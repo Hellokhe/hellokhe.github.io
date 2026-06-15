@@ -18,10 +18,8 @@ make run
 **macOS:**
 
 ```bash
-brew install x86_64-elf-gcc x86_64-elf-binutils make ninja pkg-config curl tar python3 xorriso qemu
+brew install x86_64-elf-gcc gcc clang x86_64-elf-binutils make ninja pkg-config curl tar python3 xorriso qemu-system-x86_64 mtools gzip bzip2 xz git patch flex bison texinfo
 ```
-
-and hdiutil
 
 **Linux:**
 Install:
@@ -44,7 +42,7 @@ Install:
 * git
 * patch
 * flex
-* bisom
+* bison
 * texinfo
 
 **Windows:**
