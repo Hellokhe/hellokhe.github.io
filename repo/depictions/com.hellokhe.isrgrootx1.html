@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>ISRG Root X1 CA Fix - Hellokhe iOS 7 Repo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="depiction-header">
+        <div class="pkg-icon" style="background: linear-gradient(135deg, #007aff, #34c759);">
+            <span>🔒</span>
+        </div>
+        <div class="pkg-meta">
+            <h1 class="pkg-name">ISRG Root X1 Fix</h1>
+            <div class="pkg-author">Hellokhe / Let's Encrypt</div>
+            <div class="badge-row">
+                <span class="badge badge-compat">✓ iOS 7.0 – 7.1.2</span>
+                <span class="badge badge-version">v1.0.0</span>
+                <span class="badge badge-section">System</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-buttons">
+        <a href="cydia://package/com.hellokhe.isrgrootx1" class="btn btn-primary">Install in Cydia</a>
+        <a href="../isrgrootx1.mobileconfig" class="btn btn-secondary">Install Profile</a>
+    </div>
+
+    <div class="alert-box">
+        <strong>Essential Fix for iOS 7:</strong> In September 2021, the legacy DST Root CA X3 certificate expired worldwide. Without this update, iOS 7 Safari and Cydia will report "Cannot Verify Server Identity" or "SSL Handshake Failed" on nearly every modern website and repository.
+    </div>
+
+    <div class="section-title">Overview</div>
+    <div class="card">
+        <p>This package installs the modern <strong>ISRG Root X1</strong> certificate authority into the system certificate trust store (<code>/etc/ssl/certs/</code> and <code>/usr/share/ca-certificates/</code>), re-enabling secure HTTPS connections across Cydia, Safari, curl, and all networked tweaks.</p>
+    </div>
+
+    <div class="section-title">What This Resolves</div>
+    <div class="card">
+        <ul>
+            <li>Fixes Cydia "POSIX: Operation timed out" and SSL certificate errors when fetching GitHub Pages repositories.</li>
+            <li>Restores secure browsing in MobileSafari for sites using Let's Encrypt certificates.</li>
+            <li>Fixes curl, wget, and APT network downloads on iOS 7.</li>
+        </ul>
+    </div>
+
+    <div class="section-title">Package Details</div>
+    <div class="table-view">
+        <div class="table-row">
+            <span class="table-label">Package Identifier</span>
+            <span class="table-value">com.hellokhe.isrgrootx1</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label">Version</span>
+            <span class="table-value">1.0.0</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label">Architecture</span>
+            <span class="table-value">iphoneos-arm</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label">Section</span>
+            <span class="table-value">System</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label">Direct .deb Download</span>
+            <span class="table-value"><a href="../debs/com.hellokhe.isrgrootx1_1.0.0_iphoneos-arm.deb" download>Download</a></span>
+        </div>
+    </div>
+
+    <div class="depiction-footer">
+        <p><a href="../index.html">← Return to Hellokhe Repo</a></p>
+        <p style="margin-top: 8px;">Hellokhe iOS 7 Repository &bull; Dedicated to iOS 7 Preservation</p>
+    </div>
+</body>
+</html>

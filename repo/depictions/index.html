@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Depictions - Hellokhe iOS 7 Repo</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            var params = {};
+            var query = window.location.search.substring(1);
+            if (query) {
+                var pairs = query.split('&');
+                for (var i = 0; i < pairs.length; i++) {
+                    var parts = pairs[i].split('=');
+                    params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || '');
+                }
+            }
+            if (params.p) {
+                var target = params.p + '.html';
+                window.location.replace(target);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div class="depiction-header">
+        <div class="pkg-icon" style="background: linear-gradient(135deg, #007aff, #5856d6);">
+            <span>📦</span>
+        </div>
+        <div class="pkg-meta">
+            <h1 class="pkg-name">Hellokhe Repo Depictions</h1>
+            <div class="pkg-author">Hellokhe iOS 7 Package Catalog</div>
+            <div class="badge-row">
+                <span class="badge badge-compat">iOS 7.x Compatible</span>
+                <span class="badge badge-section">Repository</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">Hosted Packages</div>
+    <div class="table-view">
+        <div class="table-row">
+            <span class="table-label"><a href="ai.akemi.appsyncunified.html">⚡️ AppSync Unified</a></span>
+            <span class="table-value">v116.2</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="ai.akemi.appinst.html">💻 appinst (App Installer)</a></span>
+            <span class="table-value">v2.1.1</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="isrgrootx1.html">🔒 ISRG Root X1 CA Fix</a></span>
+            <span class="table-value">v1.0.0</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="uk.invoxiplaygames.checkmatestore.html">🛍️ Checkmate, Store!</a></span>
+            <span class="table-value">v1.2</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="preferenceloader.html">⚙️ PreferenceLoader</a></span>
+            <span class="table-value">v2.2.6</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="com.iky1e.swipeselection.html">⌨️ SwipeSelection</a></span>
+            <span class="table-value">v1.5.2-1</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="com.parrotgeek.ifilefix.html">📁 iFile Crash Fix</a></span>
+            <span class="table-value">v1.0</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="com.lukezgd.iconsfix.html">📱 Jailbreak App Icons Fix</a></span>
+            <span class="table-value">v1.0.0</span>
+        </div>
+        <div class="table-row">
+            <span class="table-label"><a href="com.lukezgd.cydiawebviewmodifier.html">🌐 Cydia Webview Modifier</a></span>
+            <span class="table-value">v1.0</span>
+        </div>
+    </div>
+
+    <div class="depiction-footer">
+        <p><a href="../index.html">← Return to Hellokhe Repo</a></p>
+    </div>
+</body>
+</html>

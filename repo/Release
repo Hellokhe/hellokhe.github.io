@@ -1,0 +1,24 @@
+Origin: Hellokhe Repo
+Label: Hellokhe (iOS 7.x)
+Suite: stable
+Version: 1.0
+Codename: ios7
+Architectures: iphoneos-arm
+Components: main
+Description: Dedicated Cydia / APT repository for iOS 7.x devices. Hosts AppSync Unified, modern SSL fixes, and essential legacy tweaks.
+Date: Sun, 01 Nov 2026 01:02:46 UTC
+MD5Sum:
+ 908aa582f9eba071d8ff162e69764553 7435 Packages
+ 326758a964ccc0c6971b624edc5f2818 2796 Packages.gz
+ b3e996b967cfd314a916b763c878aba2 2966 Packages.bz2
+ 4cf8a8c13ebb4f2deb3ae187a913d5c9 2760 Packages.xz
+SHA1:
+ 8ee8f6f0b81a4088929f5da3cd5a751280ea435c 7435 Packages
+ b1776f249c7f9d1c1072e89563518223de368c52 2796 Packages.gz
+ ca3448a0fce475d93c850dc88b22d1a5124b77a0 2966 Packages.bz2
+ 2593810ed27bf86869e7acade69671418b9d045f 2760 Packages.xz
+SHA256:
+ 14fab272ef9cc89e96f57015b8004e675d4cd8d174c44fd78ac8f457ef01c340 7435 Packages
+ 31ceb94c28e865fd2b5622d5425871d9cb4175fa8798c33634ab9e4b42fe5cad 2796 Packages.gz
+ 1a395bd0219520365fda1852550aefe296a8aac626dad3f5f4e2a1d79c921258 2966 Packages.bz2
+ bbfcaa3604ab61a92d6e9d30ef8d47f9fc11af812c041d9f759472388bd751bc 2760 Packages.xz

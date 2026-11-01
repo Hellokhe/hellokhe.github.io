@@ -28,3 +28,16 @@ just_the_docs:
     features:
       name: Features
       nav_fold: true
+
+# Include iOS 7 Cydia / APT repository files (prevents Jekyll from dropping extensionless files)
+include:
+  - repo/Release
+  - repo/Packages
+  - repo/Packages.gz
+  - repo/Packages.bz2
+  - repo/Packages.xz
+  - repo/CydiaIcon.png
+  - repo/isrgrootx1.mobileconfig
+  - repo/isrgrootx1.pem
+  - repo/isrgrootx1.crt
+  - repo/debs

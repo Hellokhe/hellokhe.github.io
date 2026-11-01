@@ -1,0 +1,169 @@
+Package: ai.akemi.appinst
+Name: appinst (App Installer)
+Version: 2.1.1
+Architecture: iphoneos-arm
+Maintainer: Karen/あけみ <karen@akemi.ai>
+Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+Section: Utilities
+Installed-Size: 364
+Depends: ai.akemi.appsyncunified (>= 5.1)
+Pre-Depends: firmware (>= 5.0)
+Conflicts: com.sull.appinstaller
+Provides: com.linusyang.appinst
+Replaces: com.linusyang.appinst
+Filename: debs/ai.akemi.appinst_2.1.1_iphoneos-arm.deb
+Size: 59716
+MD5sum: 891aef5b77f11e286edd1440dd905943
+SHA1: 86f090c7e88452fb89baf14beacbb26d2392003e
+SHA256: 5997771183c39eb8b5e13fc2bb511b1dfcb7eb39d3f10c9092ab088ec34aae09
+Tag: role::enduser, purpose::console
+Homepage: https://github.com/akemin-dayo/AppSync
+Depiction: https://hellokhe.github.io/repo/depictions/ai.akemi.appinst.html
+Description: A command-line IPA app installer.
+Priority: standard
+
+Package: ai.akemi.appsyncunified
+Name: AppSync Unified
+Version: 116.2
+Architecture: iphoneos-arm
+Maintainer: Karen/あけみ <karen@akemi.ai>
+Author: Karen/あけみ, Linus Yang <karen@akemi.ai>
+Section: Tweaks
+Installed-Size: 636
+Depends: firmware (>= 5.0), mobilesubstrate (>= 0.9.5100), firmware (<< 26.0)
+Conflicts: us.hackulo.appsync50, us.hackulo.appsync50plus, com.hackyouriphone.appsync7, com.teiron.ppsync, appsync50plus2.25pp, com.linusyang.appsync, com.sull.appsyncunified, com.sull.appsyncunifiedbeta, com.xsellize.appsync50, com.xsellize.appsync50plus, appsync50plus.178, appsync50plus2.178, cydia.net.angelxwind.appsyncunified, com.ifucker.appsync, com.sexyphonetech.appsyncunified, appsyncunifiedofficial, org.digbick.asufixed, cn.mingmei.asu623517234615234813, technology.goated.appsync, technology.goated.appsyncunified, vaginalfisting.appsynctool, science.xnu.substitute, akemi.appsink, akemi.appsyncunifed, akemi.appsyncunifed2, akemi.appsyncunifedpatched, appsyncpatched, appsyncrootless, weaponized.autism.technology.appsyncunified, ellekit (<< 1.1)
+Provides: appsync, net.angelxwind.appsyncunified
+Replaces: us.hackulo.appsync50, net.angelxwind.appsyncunified
+Filename: debs/ai.akemi.appsyncunified_116.2_iphoneos-arm.deb
+Size: 78580
+MD5sum: 4ecec5319346560a6355ccafd7f9826d
+SHA1: ee8fdded08ef778c625180d81fbe74a97988dba0
+SHA256: cd700c91f746cf3a58ac534d43d4ff8278ffb9b92683456649bbba431adfe76e
+Homepage: https://cydia.akemi.ai/
+Depiction: https://hellokhe.github.io/repo/depictions/ai.akemi.appsyncunified.html
+Description: Enables the ability to install unsigned/fakesigned iOS applications.
+
+Package: com.hellokhe.isrgrootx1
+Name: ISRG Root X1 CA Fix (iOS 7 SSL)
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: Hellokhe
+Author: Hellokhe / Let's Encrypt
+Section: System
+Filename: debs/com.hellokhe.isrgrootx1_1.0.0_iphoneos-arm.deb
+Size: 2466
+MD5sum: b1f91d4449513370cf1775d7551cf083
+SHA1: d031bf5648a14b0ba82a3da7065afe8ab6d9a32e
+SHA256: fc2929c07d6763a549cdb65fed4a9a37379f740898d78c7e4d7a776dd5a56b7f
+Tag: role::hacker, purpose::extension
+Depiction: https://hellokhe.github.io/repo/depictions/com.hellokhe.isrgrootx1.html
+Description: Modern SSL/TLS Certificate Fix for iOS 7. Fixes HTTPS and Cydia network errors caused by expired root certificates.
+
+Package: com.iky1e.swipeselection
+Name: SwipeSelection
+Version: 1.5.2-1
+Architecture: iphoneos-arm
+Maintainer: Bigboss <bigboss@thebigboss.org>
+Author: iKy1e (Kyle Howells) <freerunnering+SwipeSelection@gmail.com>
+Section: Tweaks
+Installed-Size: 132
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 4.0)
+Filename: debs/com.iky1e.swipeselection_1.5.2-1_iphoneos-arm.deb
+Size: 11394
+MD5sum: 823d5a4505c7e828c6ed4ee1cc7b338a
+SHA1: 37539e3cb94e7c5eef03f6d228ec98420215d40a
+SHA256: d3aaa49a9d81aa1cfc07d00bac894624dfde24186d909df8eb8a512bfdf015b8
+Tag: purpose::extension, compatible::ios7, compatible::ios8, compatible::ios9
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=swipeselectionDp
+Depiction: https://hellokhe.github.io/repo/depictions/com.iky1e.swipeselection.html
+Description: keyboard swipes move cursor & select text
+Sponsor: thebigboss.org <http://thebigboss.org>
+dev: freerunnering
+Icon: file:///Library/PreferenceBundles/SwipeSelectionPro.bundle/SwipeSelectionPro@2x.png
+
+Package: com.lukezgd.cydiawebviewmodifier
+Name: Cydia Webview Modifier
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: LukeZGD
+Author: LukeZGD
+Section: Tweaks
+Installed-Size: 88
+Depends: cydia, mobilesubstrate (>= 0.9.5000), preferenceloader
+Filename: debs/com.lukezgd.cydiawebviewmodifier_1.0_iphoneos-arm.deb
+Size: 5232
+MD5sum: f6fba5ccc48d3333f1fd998f909aa2b6
+SHA1: 0cbdbd04a53f68a35a02bc01cc0ca6b499972ea4
+SHA256: 5bff624321c2109288330c46ac020884b93863675fbbd907ad0471fb644443d2
+Depiction: https://hellokhe.github.io/repo/depictions/com.lukezgd.cydiawebviewmodifier.html
+Description: Modify URL loaded in Cydia webviews
+
+Package: com.lukezgd.iconsfix
+Name: Jailbreak App Icons Fix
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: LukeZGD
+Author: LukeZGD
+Section: System
+Depends: com.ericasadun.utilities
+Filename: debs/com.lukezgd.iconsfix_1.0.0_iphoneos-arm.deb
+Size: 782
+MD5sum: 57f4702f248d4df2f920a26848d4dd18
+SHA1: 2705b23064b8a465b9966b7b730ce557e98d0d6c
+SHA256: db8fe31762756f291d922d6939a898ee37f78b4b94e5a853672cd98be3f14fe7
+Depiction: https://hellokhe.github.io/repo/depictions/com.lukezgd.iconsfix.html
+Description: Fix missing jailbreak app icons. Reboot after installing to apply changes, then you may remove this package.
+
+Package: com.parrotgeek.ifilefix
+Name: iFile Crash Fix
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: parrotgeek1 <parrotgeek1@gmail.com>
+Author: parrotgeek1 <parrotgeek1@gmail.com>
+Section: Tweaks
+Depends: eu.heinelt.ifile
+Pre-Depends: grep, sed
+Filename: debs/com.parrotgeek.ifilefix_1.0_iphoneos-arm.deb
+Size: 756
+MD5sum: 29dd062adc54c9db0dfb29aee4a268dc
+SHA1: b0e7c30321448daf149f341e9b869066996890a4
+SHA256: ab604ee96f79aa4163c87fccbb6f379693e4a09bb3d6ab2d79345f053100d8c1
+Depiction: https://hellokhe.github.io/repo/depictions/com.parrotgeek.ifilefix.html
+Description: Fixes iFile crash on launch.
+
+Package: preferenceloader
+Name: PreferenceLoader
+Version: 2.2.6
+Architecture: iphoneos-arm
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Author: Sam Bingner <maintainer@sbdhi.com>
+Section: System
+Installed-Size: 526
+Depends: mobilesubstrate
+Filename: debs/preferenceloader_2.2.6_iphoneos-arm.deb
+Size: 36414
+MD5sum: 551c39b9d6d58be5ad82e81a59a1715f
+SHA1: c1d547036234756c5e75a633393d4ffa791b1126
+SHA256: 335fff25ff13021889ba856ce84fbc23ba25569f1c6cc65a3e113b433b1ed60f
+Tag: role::hacker, purpose::library
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=preferenceloader2Data
+Depiction: https://hellokhe.github.io/repo/depictions/preferenceloader.html
+Description: load preferences in style
+dev: dustinhowett
+
+Package: uk.invoxiplaygames.checkmatestore
+Name: Checkmate, Store!
+Version: 1.2
+Architecture: iphoneos-arm
+Maintainer: InvoxiPlayGames <webmaster@invoxiplaygames.uk>
+Author: InvoxiPlayGames <webmaster@invoxiplaygames.uk>
+Section: Tweaks
+Installed-Size: 164
+Depends: mobilesubstrate, firmware (>= 2.0)
+Filename: debs/uk.invoxiplaygames.checkmatestore_1.2_iphoneos-arm.deb
+Size: 5200
+MD5sum: 5245fc6431aadd77110a226b8f0d9ee8
+SHA1: 1330e7a5c051c6dfbff558184de78accecb19032
+SHA256: 0863fee434c9a1aed89696655b4075aa3edde2b2ad3ee2a0e99a99428c17ffe3
+Depiction: https://hellokhe.github.io/repo/depictions/uk.invoxiplaygames.checkmatestore.html
+Description: Disable capability limits in the App Store.

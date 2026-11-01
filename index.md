@@ -26,3 +26,4 @@ No Linux, No backbone OS! Just your zenOS kernel running everything. :D
 - [Shells](features/shell)
 - [Compile](docs/compile)
 - [Architecture](docs/architecture)
+- [iOS 7.x Cydia Repository](repo/)
