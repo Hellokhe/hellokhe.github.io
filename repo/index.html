@@ -2,1151 +2,440 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Hellokhe iOS 7.x Cydia Repository &bull; AppSync Unified &amp; Legacy Tweaks</title>
-    <meta name="description" content="Dedicated iOS 7.x jailbreak repository hosted by Hellokhe. Features AppSync Unified, ISRG Root X1 SSL Fix, Checkmate Store, and essential legacy tweaks.">
-    <meta name="author" content="Hellokhe">
-    <meta name="theme-color" content="#007aff">
-
-    <!-- OpenGraph / Social -->
-    <meta property="og:title" content="Hellokhe iOS 7 Cydia Repository">
-    <meta property="og:description" content="Dedicated iOS 7.x jailbreak repository. Featuring AppSync Unified, ISRG Root X1 SSL Fix, and essential legacy packages.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hellokhe.github.io/repo/">
-    <meta property="og:image" content="https://hellokhe.github.io/repo/CydiaIcon.png">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Hellokhe iOS 7 Repo</title>
     <link rel="icon" type="image/png" href="CydiaIcon.png">
     <link rel="apple-touch-icon" href="CydiaIcon.png">
-
     <style>
-        /* Modern & iOS 7 Hybrid Aesthetic */
         * {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
-            font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: #f0f2f5 linear-gradient(180deg, #e4ecf7 0%, #f7f9fc 100%);
-            color: #1c1c1e;
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
-            padding: 0 0 60px;
-        }
-
-        /* Ambient blurred wallpaper backdrop inspired by iOS 7 */
-        .ambient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-            opacity: 0.65;
-        }
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            -webkit-filter: blur(80px);
-            filter: blur(80px);
-        }
-        .orb-1 {
-            width: 380px;
-            height: 380px;
-            background: rgba(0, 122, 255, 0.25);
-            top: -100px;
-            left: -100px;
-        }
-        .orb-2 {
-            width: 420px;
-            height: 420px;
-            background: rgba(88, 86, 214, 0.22);
-            top: 20%;
-            right: -120px;
-        }
-        .orb-3 {
-            width: 350px;
-            height: 350px;
-            background: rgba(52, 199, 89, 0.2);
-            bottom: 5%;
-            left: 10%;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 860px;
+            font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #f4f4f7;
+            color: #222222;
+            padding: 20px 16px 40px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 24px 18px;
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
         }
-
-        /* Frosted Glass Cards */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.82);
-            -webkit-backdrop-filter: blur(25px);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 18px;
-            padding: 24px;
-            margin-bottom: 22px;
-            -webkit-box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Hero Header */
-        .hero {
-            text-align: center;
-            padding: 36px 20px 28px;
-        }
-        .hero-icon {
-            width: 96px;
-            height: 96px;
-            border-radius: 22px;
-            margin: 0 auto 18px;
-            display: block;
-            -webkit-box-shadow: 0 10px 24px rgba(0, 122, 255, 0.28);
-            box-shadow: 0 10px 24px rgba(0, 122, 255, 0.28);
-        }
-        .hero-title {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #111111;
-            margin-bottom: 6px;
-        }
-        .hero-subtitle {
-            font-size: 16px;
-            font-weight: 400;
-            color: #636366;
-            max-width: 580px;
-            margin: 0 auto 20px;
-        }
-        .hero-badges {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 24px;
-        }
-        .tag-pill {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
-            background: rgba(0, 122, 255, 0.1);
+        a {
             color: #007aff;
-            border: 1px solid rgba(0, 122, 255, 0.2);
+            text-decoration: none;
         }
-        .tag-pill.green {
-            background: rgba(52, 199, 89, 0.12);
-            color: #28a745;
-            border-color: rgba(52, 199, 89, 0.25);
+        a:hover {
+            text-decoration: underline;
         }
-        .tag-pill.purple {
-            background: rgba(88, 86, 214, 0.12);
-            color: #5856d6;
-            border-color: rgba(88, 86, 214, 0.25);
-        }
-
-        /* Repo Action Buttons */
-        .repo-actions {
-            display: -webkit-flex;
+        .top-bar {
+            font-size: 13px;
+            margin-bottom: 16px;
             display: flex;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-justify-content: center;
-            justify-content: center;
-            gap: 12px;
+            justify-content: space-between;
+            color: #8e8e93;
+        }
+        .header {
+            text-align: center;
             margin-bottom: 20px;
         }
-        .btn-action {
-            display: -webkit-inline-flex;
-            display: inline-flex;
-            -webkit-align-items: center;
-            align-items: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            padding: 13px 22px;
-            border-radius: 14px;
-            font-size: 15px;
+        .repo-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 13px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 22px;
             font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            border: 1px solid transparent;
-            -webkit-transition: -webkit-transform 0.15s ease, -webkit-box-shadow 0.15s ease;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
-        }
-        .btn-action:hover, .btn-action:active {
-            -webkit-transform: translateY(-2px);
-            transform: translateY(-2px);
-        }
-        .btn-cydia {
-            background: #904838 linear-gradient(135deg, #a35342 0%, #6e3224 100%);
-            color: #ffffff;
-            -webkit-box-shadow: 0 4px 12px rgba(144, 72, 56, 0.35);
-            box-shadow: 0 4px 12px rgba(144, 72, 56, 0.35);
-        }
-        .btn-sileo {
-            background: #2a73cc linear-gradient(135deg, #2a73cc 0%, #174ea6 100%);
-            color: #ffffff;
-            -webkit-box-shadow: 0 4px 12px rgba(42, 115, 204, 0.35);
-            box-shadow: 0 4px 12px rgba(42, 115, 204, 0.35);
-        }
-        .btn-zebra {
-            background: #1c1c1e linear-gradient(135deg, #3a3a3c 0%, #1c1c1e 100%);
-            color: #ffffff;
-            -webkit-box-shadow: 0 4px 12px rgba(28, 28, 30, 0.3);
-            box-shadow: 0 4px 12px rgba(28, 28, 30, 0.3);
-        }
-        .btn-copy {
-            background: #ffffff;
-            color: #007aff;
-            border-color: #d1d1d6;
-        }
-
-        /* Repo URL Display Box */
-        .repo-url-bar {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: center;
-            align-items: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.04);
-            border: 1px solid #dcdce0;
-            border-radius: 12px;
-            padding: 10px 16px;
-            max-width: 460px;
-            margin: 0 auto;
-            font-family: monospace;
-            font-size: 14px;
-            color: #1c1c1e;
-        }
-        .repo-url-bar code {
-            -webkit-user-select: all;
-            user-select: all;
-            margin-right: 12px;
-        }
-        .btn-small-copy {
-            background: #007aff;
-            color: #ffffff;
-            border: none;
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        /* SSL & Fix Callout Banner */
-        .banner-alert {
-            background: rgba(255, 243, 205, 0.9);
-            -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
-            border: 1px solid #ffeeba;
-            border-radius: 16px;
-            padding: 18px 20px;
-            margin-bottom: 24px;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: flex-start;
-            align-items: flex-start;
-            gap: 14px;
-        }
-        .banner-icon {
-            font-size: 26px;
-            line-height: 1;
-            -webkit-flex-shrink: 0;
-            flex-shrink: 0;
-        }
-        .banner-content {
-            -webkit-flex-grow: 1;
-            flex-grow: 1;
-        }
-        .banner-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #856404;
+            color: #111111;
             margin-bottom: 4px;
         }
-        .banner-text {
+        .subtitle {
             font-size: 13.5px;
-            color: #664d03;
-            margin-bottom: 12px;
-        }
-        .banner-btn-group {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .btn-pill-amber {
-            background: #b07d00;
-            color: #ffffff;
-            padding: 6px 14px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .btn-pill-outline {
-            background: transparent;
-            color: #856404;
-            border: 1px solid #856404;
-            padding: 6px 14px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* Featured Package Banner (AppSync Unified) */
-        .featured-card {
-            background: -webkit-linear-gradient(135deg, rgba(255, 45, 85, 0.08), rgba(255, 149, 0, 0.08));
-            background: linear-gradient(135deg, rgba(255, 45, 85, 0.08), rgba(255, 149, 0, 0.08));
-            border: 2px solid rgba(255, 45, 85, 0.25);
-            border-radius: 20px;
-            padding: 24px;
-            margin-bottom: 26px;
-            position: relative;
-            overflow: hidden;
-        }
-        .featured-badge {
-            position: absolute;
-            top: 14px;
-            right: 18px;
-            background: #ff2d55;
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 12px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        .featured-header {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: center;
-            align-items: center;
-            gap: 16px;
+            color: #666666;
             margin-bottom: 14px;
         }
-        .featured-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 18px;
-            background: -webkit-linear-gradient(135deg, #ff2d55, #ff9500);
-            background: linear-gradient(135deg, #ff2d55, #ff9500);
-            display: -webkit-flex;
+        .buttons {
             display: flex;
-            -webkit-align-items: center;
-            align-items: center;
-            -webkit-justify-content: center;
             justify-content: center;
-            font-size: 32px;
-            color: #ffffff;
-            -webkit-box-shadow: 0 6px 16px rgba(255, 45, 85, 0.35);
-            box-shadow: 0 6px 16px rgba(255, 45, 85, 0.35);
-        }
-        .featured-title-wrap h2 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111111;
-        }
-        .featured-author {
-            font-size: 14px;
-            color: #636366;
-        }
-        .featured-desc {
-            font-size: 14.5px;
-            color: #2c2c2e;
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-        .featured-features {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
         }
-        .feature-chip {
-            background: #ffffff;
-            border: 1px solid #ffd0d8;
+        .btn {
+            background: #007aff;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 14px;
             border-radius: 8px;
-            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
+        .btn-gray {
+            background: #e5e5ea;
+            color: #1c1c1e;
+        }
+        .url-box {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #dcdce0;
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #444444;
+            user-select: all;
+            margin: 0 auto;
+        }
+        .notice {
+            background: #fff9e6;
+            border: 1px solid #ffe8a1;
+            border-radius: 8px;
+            padding: 10px 12px;
             font-size: 12.5px;
-            font-weight: 500;
-            color: #d8143a;
+            color: #73510d;
+            margin: 18px 0;
+            line-height: 1.4;
         }
-        .featured-actions {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-            gap: 10px;
+        .notice a {
+            color: #73510d;
+            font-weight: 600;
+            text-decoration: underline;
         }
-
-        /* Package Browser Section */
-        .section-header {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-justify-content: space-between;
-            justify-content: space-between;
-            -webkit-align-items: center;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-        .section-header h2 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111111;
-        }
-        .section-count {
-            font-size: 14px;
+        .section-title {
+            font-size: 12px;
+            font-weight: 600;
             color: #8e8e93;
-            font-weight: 500;
-        }
-
-        /* Search & Filters */
-        .filter-bar {
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 20px 4px 6px;
         }
         .search-input {
-            -webkit-flex: 1;
-            flex: 1;
-            min-width: 200px;
-            padding: 10px 14px;
-            border-radius: 12px;
+            width: 100%;
+            padding: 9px 12px;
+            border-radius: 8px;
             border: 1px solid #d1d1d6;
             background: #ffffff;
             font-size: 14px;
             outline: none;
-            -webkit-transition: border-color 0.2s ease;
-            transition: border-color 0.2s ease;
+            margin-bottom: 10px;
         }
         .search-input:focus {
             border-color: #007aff;
         }
-        .category-nav {
-            display: -webkit-flex;
-            display: flex;
-            gap: 6px;
-            overflow-x: auto;
-        }
-        .btn-filter {
+        .package-list {
             background: #ffffff;
-            border: 1px solid #d1d1d6;
+            border: 1px solid #dcdce0;
             border-radius: 10px;
-            padding: 8px 12px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            white-space: nowrap;
-            color: #333333;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
-        .btn-filter.active {
-            background: #007aff;
-            color: #ffffff;
-            border-color: #007aff;
-        }
-
-        /* Packages Grid */
-        .packages-grid {
-            display: -webkit-flex;
+        .pkg-row {
+            padding: 11px 14px;
+            border-bottom: 1px solid #e5e5ea;
             display: flex;
-            -webkit-flex-direction: column;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .pkg-card {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 16px 18px;
-            border: 1px solid #e5e5ea;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: center;
             align-items: center;
-            gap: 14px;
-            -webkit-transition: -webkit-transform 0.15s ease, -webkit-box-shadow 0.15s ease;
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            justify-content: space-between;
+            gap: 10px;
         }
-        .pkg-card:hover {
-            -webkit-transform: translateY(-2px);
-            transform: translateY(-2px);
-            -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        .pkg-row:last-child {
+            border-bottom: none;
         }
-        .pkg-item-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: center;
-            align-items: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            font-size: 22px;
-            color: #ffffff;
-            -webkit-flex-shrink: 0;
-            flex-shrink: 0;
-        }
-        .pkg-item-info {
-            -webkit-flex-grow: 1;
-            flex-grow: 1;
+        .pkg-info {
+            flex: 1;
             min-width: 0;
         }
-        .pkg-item-title {
-            font-size: 16px;
+        .pkg-name {
+            font-size: 14.5px;
             font-weight: 600;
             color: #111111;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: center;
-            align-items: center;
-            gap: 8px;
         }
-        .pkg-item-version {
+        .pkg-ver {
             font-size: 12px;
             color: #8e8e93;
-            font-weight: 400;
+            font-weight: normal;
+            margin-left: 4px;
         }
-        .pkg-item-desc {
-            font-size: 13.5px;
-            color: #636366;
+        .pkg-desc {
+            font-size: 13px;
+            color: #666666;
             margin-top: 2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .pkg-item-author {
-            font-size: 12px;
-            color: #8e8e93;
-            margin-top: 3px;
+        .pkg-author {
+            font-size: 11px;
+            color: #999999;
+            margin-top: 2px;
         }
-        .pkg-item-actions {
-            display: -webkit-flex;
+        .pkg-actions {
             display: flex;
-            gap: 8px;
-            -webkit-flex-shrink: 0;
+            gap: 6px;
             flex-shrink: 0;
         }
-        .btn-sm {
-            padding: 7px 12px;
-            border-radius: 8px;
-            font-size: 12.5px;
-            font-weight: 600;
-            text-decoration: none;
-            display: -webkit-inline-flex;
-            display: inline-flex;
-            -webkit-align-items: center;
-            align-items: center;
+        .tag-btn {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: #f2f2f7;
+            color: #007aff;
         }
-        .btn-sm-primary {
+        .tag-btn:hover {
+            text-decoration: none;
+            background: #e5e5ea;
+        }
+        .tag-btn.deb {
             background: #007aff;
             color: #ffffff;
         }
-        .btn-sm-outline {
-            background: #f2f2f7;
-            color: #007aff;
-            border: 1px solid #d1d1d6;
+        .tag-btn.deb:hover {
+            background: #0062cc;
         }
-
-        /* Guides Section */
         .guide-box {
             background: #ffffff;
-            border-radius: 14px;
-            padding: 18px 20px;
-            margin-bottom: 14px;
-            border: 1px solid #e5e5ea;
+            border: 1px solid #dcdce0;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 13px;
+            color: #444444;
+            margin-bottom: 16px;
         }
-        .guide-box h3 {
-            font-size: 16px;
-            font-weight: 600;
-            color: #111111;
-            margin-bottom: 10px;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-align-items: center;
-            align-items: center;
-            gap: 8px;
-        }
-        .guide-box p {
-            font-size: 14px;
-            color: #3a3a3c;
-            margin-bottom: 10px;
-        }
-        .guide-box ol, .guide-box ul {
-            margin-left: 20px;
-            font-size: 14px;
-            color: #3a3a3c;
+        .guide-box ol {
+            margin-left: 18px;
+            margin-top: 4px;
         }
         .guide-box li {
-            margin-bottom: 6px;
+            margin-bottom: 3px;
         }
-        .code-snippet {
-            background: #1c1c1e;
-            color: #32d74b;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 13px;
-            margin: 8px 0;
-            overflow-x: auto;
-        }
-
-        /* Device Compatibility Table */
-        .compat-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13.5px;
-            margin-top: 10px;
-        }
-        .compat-table th, .compat-table td {
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid #e5e5ea;
-        }
-        .compat-table th {
-            font-weight: 600;
-            color: #636366;
-            background: #f9f9fb;
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 36px;
-            font-size: 13px;
-            color: #8e8e93;
+            font-size: 12px;
+            color: #999999;
+            margin-top: 24px;
         }
-        .footer a {
-            color: #007aff;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 680px) {
-            .hero-title {
-                font-size: 26px;
-            }
-            .pkg-card {
-                -webkit-flex-direction: column;
-                flex-direction: column;
-                -webkit-align-items: flex-start;
-                align-items: flex-start;
-            }
-            .pkg-item-actions {
-                width: 100%;
-                margin-top: 8px;
-            }
-            .pkg-item-actions .btn-sm {
-                -webkit-flex: 1;
-                flex: 1;
-                -webkit-justify-content: center;
-                justify-content: center;
-            }
-            .featured-header {
-                -webkit-flex-direction: column;
-                flex-direction: column;
-                -webkit-align-items: flex-start;
-                align-items: flex-start;
-            }
+        .star-tag {
+            background: #ff2d55;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 6px;
+            margin-left: 4px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
-    <div class="ambient-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+    <div class="top-bar">
+        <a href="../">← ZenOS Wiki</a>
+        <span>hellokhe.github.io/repo</span>
     </div>
 
-    <div class="container">
-        <!-- Navigation Bar to ZenOS Wiki -->
-        <nav style="display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: center; align-items: center; margin-bottom: 14px; padding: 4px 6px;">
-            <a href="../" style="font-size: 14px; font-weight: 600; color: #007aff; text-decoration: none; display: -webkit-inline-flex; display: inline-flex; -webkit-align-items: center; align-items: center; gap: 6px;">
-                <span>←</span> Return to ZenOS Wiki
-            </a>
-            <span style="font-size: 13px; color: #8e8e93; font-weight: 500;">hellokhe.github.io/repo</span>
-        </nav>
+    <div class="header">
+        <img src="CydiaIcon.png" alt="Cydia Icon" class="repo-icon">
+        <h1>Hellokhe iOS 7 Repo</h1>
+        <p class="subtitle">Tweaks and utilities specifically for iOS 7.0 – 7.1.2.</p>
 
-        <!-- Hero Header -->
-        <header class="glass-panel hero">
-            <img src="CydiaIcon.png" alt="Hellokhe iOS 7 Cydia Icon" class="hero-icon">
-            <h1 class="hero-title">Hellokhe iOS 7 Repository</h1>
-            <p class="hero-subtitle">Preserved tweaks, essential system fixes, and unsigned IPA installation specifically packaged for <strong>iOS 7.0 &ndash; 7.1.2</strong> devices.</p>
+        <div class="buttons">
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://hellokhe.github.io/repo/" class="btn">+ Add to Cydia</a>
+            <a href="sileo://source/https://hellokhe.github.io/repo/" class="btn btn-gray">+ Sileo</a>
+            <a href="zbra://sources/add/https://hellokhe.github.io/repo/" class="btn btn-gray">+ Zebra</a>
+            <button type="button" class="btn btn-gray" onclick="copyUrl()" id="copy-btn">Copy</button>
+        </div>
 
-            <div class="hero-badges">
-                <span class="tag-pill">iOS 7.0 &bull; 7.1.2</span>
-                <span class="tag-pill green">armv7 &bull; armv7s &bull; arm64</span>
-                <span class="tag-pill purple">AppSync Unified v116.2</span>
-                <span class="tag-pill">Offline .deb Archives</span>
-            </div>
-
-            <!-- Add to Package Manager Buttons -->
-            <div class="repo-actions">
-                <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://hellokhe.github.io/repo/" class="btn-action btn-cydia" id="add-to-cydia">
-                    <span>Add to Cydia</span>
-                </a>
-                <a href="sileo://source/https://hellokhe.github.io/repo/" class="btn-action btn-sileo" id="add-to-sileo">
-                    <span>Add to Sileo</span>
-                </a>
-                <a href="zbra://sources/add/https://hellokhe.github.io/repo/" class="btn-action btn-zebra" id="add-to-zebra">
-                    <span>Add to Zebra</span>
-                </a>
-                <button type="button" class="btn-action btn-copy" onclick="copyRepoUrl()" id="copy-repo-btn">
-                    <span>📋 Copy URL</span>
-                </button>
-            </div>
-
-            <div class="repo-url-bar">
-                <code id="repo-url-text">https://hellokhe.github.io/repo/</code>
-                <button type="button" class="btn-small-copy" onclick="copyRepoUrl()">Copy</button>
-            </div>
-        </header>
-
-        <!-- iOS 7 Modern SSL Fix Notice -->
-        <section class="banner-alert">
-            <div class="banner-icon">⚠️</div>
-            <div class="banner-content">
-                <div class="banner-title">Crucial Notice for iOS 7 Users: SSL / HTTPS Handshake Fix</div>
-                <div class="banner-text">
-                    In September 2021, the legacy root certificate (DST Root CA X3) expired worldwide. Because iOS 7 does not have modern Let's Encrypt certificates built-in, Cydia and Safari will fail with <em>"Cannot Verify Server Identity"</em> or <em>"POSIX: Operation timed out"</em> when fetching modern HTTPS repos.
-                </div>
-                <div class="banner-btn-group">
-                    <a href="isrgrootx1.mobileconfig" class="btn-pill-amber">📲 Install ISRG Root X1 Profile</a>
-                    <a href="depictions/isrgrootx1.html" class="btn-pill-outline">Read SSL Fix Depiction</a>
-                    <a href="cydia://url/https://cydia.saurik.com/api/share#?source=http://hellokhe.github.io/repo/" class="btn-pill-outline">Add via Plain HTTP</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured AppSync Unified Card -->
-        <section class="glass-panel featured-card">
-            <span class="featured-badge">⭐ Flagship iOS 7 Package</span>
-            <div class="featured-header">
-                <div class="featured-icon">⚡️</div>
-                <div class="featured-title-wrap">
-                    <h2>AppSync Unified</h2>
-                    <div class="featured-author">By Karen/あけみ &amp; Linus Yang &bull; Version 116.2</div>
-                </div>
-            </div>
-
-            <p class="featured-desc">
-                Enables permanent installation of unsigned, fakesigned, or ad-hoc signed iOS applications (.ipa) on jailbroken iOS 7 devices. Bypasses code-signing checks via MobileSubstrate with zero revokes and no 7-day expiration limits.
-            </p>
-
-            <div class="featured-features">
-                <span class="feature-chip">✓ Sideload Unlimited IPAs</span>
-                <span class="feature-chip">✓ Never Revoked</span>
-                <span class="feature-chip">✓ iFunBox &amp; 3uTools Ready</span>
-                <span class="feature-chip">✓ Terminal <code>appinst</code> Support</span>
-                <span class="feature-chip">✓ 32 &amp; 64-bit iOS 7 Compatible</span>
-            </div>
-
-            <div class="featured-actions">
-                <a href="cydia://package/ai.akemi.appsyncunified" class="btn-action btn-cydia" style="padding: 10px 18px; font-size: 14px;">
-                    Install in Cydia
-                </a>
-                <a href="debs/ai.akemi.appsyncunified_116.2_iphoneos-arm.deb" class="btn-action btn-copy" style="padding: 10px 18px; font-size: 14px;" download>
-                    📥 Download .deb (78.5 KB)
-                </a>
-                <a href="depictions/ai.akemi.appsyncunified.html" class="btn-action btn-copy" style="padding: 10px 18px; font-size: 14px;">
-                    View Depiction
-                </a>
-            </div>
-        </section>
-
-        <!-- Packages Catalog Section -->
-        <main class="glass-panel">
-            <div class="section-header">
-                <h2>Hosted Packages (iOS 7.x)</h2>
-                <span class="section-count" id="package-count">9 packages available</span>
-            </div>
-
-            <!-- Filters & Search -->
-            <div class="filter-bar">
-                <input type="text" class="search-input" id="pkg-search" placeholder="Search tweaks, utilities, or authors..." onkeyup="filterPackages()">
-                <div class="category-nav">
-                    <button type="button" class="btn-filter active" onclick="setCategory('all', this)">All</button>
-                    <button type="button" class="btn-filter" onclick="setCategory('essential', this)">Essential Fixes</button>
-                    <button type="button" class="btn-filter" onclick="setCategory('tweaks', this)">Tweaks</button>
-                    <button type="button" class="btn-filter" onclick="setCategory('system', this)">System</button>
-                </div>
-            </div>
-
-            <!-- Package Cards List -->
-            <div class="packages-grid" id="packages-list">
-                <!-- 1. AppSync Unified -->
-                <div class="pkg-card" data-cat="tweaks" data-name="appsync unified ai.akemi.appsyncunified karen">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #ff2d55, #ff9500);">⚡️</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            AppSync Unified
-                            <span class="pkg-item-version">v116.2</span>
-                        </div>
-                        <div class="pkg-item-desc">Install unsigned/fakesigned IPA apps without revokes.</div>
-                        <div class="pkg-item-author">Karen/あけみ &bull; Tweaks &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/ai.akemi.appsyncunified.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/ai.akemi.appsyncunified_116.2_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 2. appinst -->
-                <div class="pkg-card" data-cat="system" data-name="appinst app installer ai.akemi.appinst cli terminal">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #4cd964, #5ac8fa);">💻</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            appinst (App Installer)
-                            <span class="pkg-item-version">v2.1.1</span>
-                        </div>
-                        <div class="pkg-item-desc">Command-line IPA app installer for MobileTerminal &amp; SSH.</div>
-                        <div class="pkg-item-author">Karen/あけみ &bull; Utilities &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/ai.akemi.appinst.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/ai.akemi.appinst_2.1.1_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 3. ISRG Root X1 Fix -->
-                <div class="pkg-card" data-cat="essential" data-name="isrg root x1 ssl tls cert certificates com.hellokhe.isrgrootx1">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #007aff, #34c759);">🔒</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            ISRG Root X1 CA Fix (iOS 7 SSL)
-                            <span class="pkg-item-version">v1.0.0</span>
-                        </div>
-                        <div class="pkg-item-desc">Modern SSL certificate updater. Fixes Cydia &amp; Safari HTTPS errors.</div>
-                        <div class="pkg-item-author">Hellokhe &bull; System &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/isrgrootx1.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/com.hellokhe.isrgrootx1_1.0.0_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 4. Checkmate, Store! -->
-                <div class="pkg-card" data-cat="essential" data-name="checkmate store invoxiplaygames app store download">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #5856d6, #ff2d55);">🛍️</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            Checkmate, Store!
-                            <span class="pkg-item-version">v1.2</span>
-                        </div>
-                        <div class="pkg-item-desc">Disable capability limits and download last compatible app versions.</div>
-                        <div class="pkg-item-author">InvoxiPlayGames &bull; Tweaks &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/uk.invoxiplaygames.checkmatestore.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/uk.invoxiplaygames.checkmatestore_1.2_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 5. PreferenceLoader -->
-                <div class="pkg-card" data-cat="system" data-name="preferenceloader settings tweak dustinhowett sam bingner">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #8e8e93, #636366);">⚙️</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            PreferenceLoader
-                            <span class="pkg-item-version">v2.2.6</span>
-                        </div>
-                        <div class="pkg-item-desc">Allows jailbreak tweaks to display preference panels in Settings.app.</div>
-                        <div class="pkg-item-author">Dustin Howett &amp; Sam Bingner &bull; System</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/preferenceloader.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/preferenceloader_2.2.6_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 6. SwipeSelection -->
-                <div class="pkg-card" data-cat="tweaks" data-name="swipeselection keyboard cursor gesture iky1e">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #5ac8fa, #007aff);">⌨️</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            SwipeSelection
-                            <span class="pkg-item-version">v1.5.2-1</span>
-                        </div>
-                        <div class="pkg-item-desc">Keyboard swipes move the cursor and select text effortlessly.</div>
-                        <div class="pkg-item-author">iKy1e &bull; Tweaks &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/com.iky1e.swipeselection.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/com.iky1e.swipeselection_1.5.2-1_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 7. iFile Crash Fix -->
-                <div class="pkg-card" data-cat="essential" data-name="ifile crash fix parrotgeek1 eu.heinelt.ifile">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #ff9500, #ffcc00);">📁</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            iFile Crash Fix
-                            <span class="pkg-item-version">v1.0</span>
-                        </div>
-                        <div class="pkg-item-desc">Patches startup bug causing iFile to crash immediately on iOS 7.</div>
-                        <div class="pkg-item-author">parrotgeek1 &bull; Tweaks &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/com.parrotgeek.ifilefix.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/com.parrotgeek.ifilefix_1.0_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 8. Jailbreak App Icons Fix -->
-                <div class="pkg-card" data-cat="system" data-name="icons fix jailbreak app springboard lukezgd">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #af52de, #5856d6);">📱</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            Jailbreak App Icons Fix
-                            <span class="pkg-item-version">v1.0.0</span>
-                        </div>
-                        <div class="pkg-item-desc">Fixes invisible or missing SpringBoard icons on legacy jailbreaks.</div>
-                        <div class="pkg-item-author">LukeZGD &bull; System &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/com.lukezgd.iconsfix.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/com.lukezgd.iconsfix_1.0.0_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-
-                <!-- 9. Cydia Webview Modifier -->
-                <div class="pkg-card" data-cat="tweaks" data-name="cydia webview modifier lukezgd urls webkit">
-                    <div class="pkg-item-icon" style="background: linear-gradient(135deg, #34c759, #30b0c7);">🌐</div>
-                    <div class="pkg-item-info">
-                        <div class="pkg-item-title">
-                            Cydia Webview Modifier
-                            <span class="pkg-item-version">v1.0</span>
-                        </div>
-                        <div class="pkg-item-desc">Prevents broken depiction rendering and redirects inside Cydia.</div>
-                        <div class="pkg-item-author">LukeZGD &bull; Tweaks &bull; iphoneos-arm</div>
-                    </div>
-                    <div class="pkg-item-actions">
-                        <a href="depictions/com.lukezgd.cydiawebviewmodifier.html" class="btn-sm btn-sm-outline">Depiction</a>
-                        <a href="debs/com.lukezgd.cydiawebviewmodifier_1.0_iphoneos-arm.deb" class="btn-sm btn-sm-primary" download>Get DEB</a>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- iOS 7 Setup & Tutorial Guides -->
-        <section class="glass-panel">
-            <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">iOS 7.x Setup &amp; Installation Guides</h2>
-
-            <div class="guide-box">
-                <h3><span>📥</span> How to Add this Repo in Cydia</h3>
-                <ol>
-                    <li>Launch <strong>Cydia</strong> from your home screen.</li>
-                    <li>Tap the <strong>Sources</strong> tab at the bottom, then tap <strong>Edit</strong> in the top-right corner.</li>
-                    <li>Tap <strong>Add</strong> in the top-left corner.</li>
-                    <li>Enter: <code style="color: #007aff; font-weight: bold;">https://hellokhe.github.io/repo/</code> (or tap "Add to Cydia" above).</li>
-                    <li>Tap <strong>Add Source</strong> and wait for Cydia to reload packages.</li>
-                </ol>
-            </div>
-
-            <div class="guide-box">
-                <h3><span>⚡️</span> How to Install Unsigned Apps (.IPA) using AppSync Unified</h3>
-                <ol>
-                    <li>Install <strong>AppSync Unified</strong> from this repo inside Cydia.</li>
-                    <li>Reboot or respring your device once after installation.</li>
-                    <li><strong>Method A (PC/Mac):</strong> Plug your device into your computer, open <strong>iFunBox</strong> or <strong>3uTools</strong>, select <em>Install App (.ipa)</em> and choose your IPA file.</li>
-                    <li><strong>Method B (On-Device Terminal):</strong> Install <code>appinst</code> from this repo, place your IPA on your device, and run:
-                        <div class="code-snippet">appinst /var/mobile/Downloads/MyGame.ipa</div>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="guide-box">
-                <h3><span>🔧</span> Offline / Manual .deb Installation via AutoInstall</h3>
-                <p>If your device lacks Wi-Fi or Cydia isn't working yet:</p>
-                <ol>
-                    <li>Download any <code>.deb</code> file directly from the links above.</li>
-                    <li>Connect your device to your computer via USB (using iFunBox or Cyberduck/SFTP).</li>
-                    <li>Place the downloaded <code>.deb</code> into:
-                        <div class="code-snippet">/var/root/Media/Cydia/AutoInstall/</div>
-                        <em>(Create the AutoInstall folder if it doesn't already exist)</em>
-                    </li>
-                    <li>Reboot your iPhone/iPad twice. Cydia's background daemon will automatically install the package!</li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Device Compatibility Table -->
-        <section class="glass-panel">
-            <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Supported iOS 7 Devices</h2>
-            <p style="font-size: 14px; color: #636366; margin-bottom: 14px;">Every tweak in this repository has been verified on both 32-bit (armv7/armv7s) and 64-bit (arm64) iOS 7 models:</p>
-            <table class="compat-table">
-                <thead>
-                    <tr>
-                        <th>Device Name</th>
-                        <th>Model ID</th>
-                        <th>Chipset</th>
-                        <th>Jailbreak Method</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>iPhone 4</strong></td>
-                        <td>iPhone3,1 / 3,2 / 3,3</td>
-                        <td>A4 (32-bit armv7)</td>
-                        <td>Pangu 7.1.x / Evasi0n7 / GeekSn0w</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPhone 4s</strong></td>
-                        <td>iPhone4,1</td>
-                        <td>A5 (32-bit armv7)</td>
-                        <td>Pangu 7.1.x / Evasi0n7</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPhone 5 / 5c</strong></td>
-                        <td>iPhone5,1 / 5,2 / 5,3 / 5,4</td>
-                        <td>A6 (32-bit armv7s)</td>
-                        <td>Pangu 7.1.x / Evasi0n7</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPhone 5s</strong></td>
-                        <td>iPhone6,1 / 6,2</td>
-                        <td>A7 (64-bit arm64)</td>
-                        <td>Pangu 7.1.x / Evasi0n7</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPad 2 / 3 / 4 / mini</strong></td>
-                        <td>iPad2,x / 3,x / 4,x</td>
-                        <td>A5 / A5X / A6X (32-bit)</td>
-                        <td>Pangu 7.1.x / Evasi0n7</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPad Air / mini 2</strong></td>
-                        <td>iPad4,1 / 4,2 / 4,4 / 4,5</td>
-                        <td>A7 (64-bit arm64)</td>
-                        <td>Pangu 7.1.x / Evasi0n7</td>
-                    </tr>
-                    <tr>
-                        <td><strong>iPod touch 5G</strong></td>
-                        <td>iPod5,1</td>
-                        <td>A5 (32-bit armv7)</td>
-                        <td>Pangu 7.1.x / Evasi0n7</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p><strong>Hellokhe iOS 7 Cydia Repository</strong> &bull; Built with pride for legacy iOS preservation.</p>
-            <p style="margin-top: 6px;">
-                <a href="https://github.com/Hellokhe" target="_blank" rel="noopener">Hellokhe on GitHub</a> &bull;
-                <a href="Release">Release File</a> &bull;
-                <a href="Packages">Packages List</a> &bull;
-                <a href="depictions/index.html">Depictions Catalog</a>
-            </p>
-        </footer>
+        <div class="url-box">https://hellokhe.github.io/repo/</div>
     </div>
 
-    <!-- Client Script (ES5 compatible for iOS 7 Safari) -->
+    <!-- Simple SSL Notice -->
+    <div class="notice">
+        <strong>SSL on iOS 7:</strong> If Cydia or Safari fails on HTTPS due to expired root certificates, tap here to <a href="isrgrootx1.mobileconfig">Install the ISRG Root X1 Profile</a>, or add via <a href="cydia://url/https://cydia.saurik.com/api/share#?source=http://hellokhe.github.io/repo/">HTTP</a>.
+    </div>
+
+    <!-- Packages Section -->
+    <div class="section-title">Packages (<span id="pkg-count">9</span>)</div>
+    <input type="text" class="search-input" id="search-box" placeholder="Filter packages..." onkeyup="filterList()">
+
+    <div class="package-list" id="pkg-list">
+        <!-- 1. AppSync Unified -->
+        <div class="pkg-row" data-name="appsync unified ai.akemi.appsyncunified">
+            <div class="pkg-info">
+                <div class="pkg-name">AppSync Unified <span class="star-tag">FEATURED</span> <span class="pkg-ver">v116.2</span></div>
+                <div class="pkg-desc">Install unsigned/fakesigned IPAs without revokes.</div>
+                <div class="pkg-author">Karen/あけみ &bull; Tweaks &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/ai.akemi.appsyncunified.html" class="tag-btn">Depiction</a>
+                <a href="debs/ai.akemi.appsyncunified_116.2_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 2. appinst -->
+        <div class="pkg-row" data-name="appinst app installer ai.akemi.appinst">
+            <div class="pkg-info">
+                <div class="pkg-name">appinst <span class="pkg-ver">v2.1.1</span></div>
+                <div class="pkg-desc">Command-line IPA app installer for terminal and SSH.</div>
+                <div class="pkg-author">Karen/あけみ &bull; Utilities &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/ai.akemi.appinst.html" class="tag-btn">Depiction</a>
+                <a href="debs/ai.akemi.appinst_2.1.1_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 3. ISRG Root X1 Fix -->
+        <div class="pkg-row" data-name="isrg root x1 ssl fix certificates com.hellokhe.isrgrootx1">
+            <div class="pkg-info">
+                <div class="pkg-name">ISRG Root X1 CA Fix <span class="pkg-ver">v1.0.0</span></div>
+                <div class="pkg-desc">Modern SSL certificate updater for Cydia and Safari.</div>
+                <div class="pkg-author">Hellokhe &bull; System &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/isrgrootx1.html" class="tag-btn">Depiction</a>
+                <a href="debs/com.hellokhe.isrgrootx1_1.0.0_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 4. Checkmate, Store! -->
+        <div class="pkg-row" data-name="checkmate store invoxiplaygames">
+            <div class="pkg-info">
+                <div class="pkg-name">Checkmate, Store! <span class="pkg-ver">v1.2</span></div>
+                <div class="pkg-desc">Download older compatible app versions from the App Store.</div>
+                <div class="pkg-author">InvoxiPlayGames &bull; Tweaks &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/uk.invoxiplaygames.checkmatestore.html" class="tag-btn">Depiction</a>
+                <a href="debs/uk.invoxiplaygames.checkmatestore_1.2_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 5. PreferenceLoader -->
+        <div class="pkg-row" data-name="preferenceloader settings tweak">
+            <div class="pkg-info">
+                <div class="pkg-name">PreferenceLoader <span class="pkg-ver">v2.2.6</span></div>
+                <div class="pkg-desc">Enables tweak settings panels in Settings.app.</div>
+                <div class="pkg-author">Dustin Howett &amp; Sam Bingner &bull; System</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/preferenceloader.html" class="tag-btn">Depiction</a>
+                <a href="debs/preferenceloader_2.2.6_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 6. SwipeSelection -->
+        <div class="pkg-row" data-name="swipeselection keyboard cursor gesture">
+            <div class="pkg-info">
+                <div class="pkg-name">SwipeSelection <span class="pkg-ver">v1.5.2-1</span></div>
+                <div class="pkg-desc">Swipe keyboard to move text cursor and select text.</div>
+                <div class="pkg-author">iKy1e &bull; Tweaks &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/com.iky1e.swipeselection.html" class="tag-btn">Depiction</a>
+                <a href="debs/com.iky1e.swipeselection_1.5.2-1_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 7. iFile Crash Fix -->
+        <div class="pkg-row" data-name="ifile crash fix parrotgeek1">
+            <div class="pkg-info">
+                <div class="pkg-name">iFile Crash Fix <span class="pkg-ver">v1.0</span></div>
+                <div class="pkg-desc">Fixes instant crash on startup when launching iFile.</div>
+                <div class="pkg-author">parrotgeek1 &bull; Tweaks &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/com.parrotgeek.ifilefix.html" class="tag-btn">Depiction</a>
+                <a href="debs/com.parrotgeek.ifilefix_1.0_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 8. Jailbreak App Icons Fix -->
+        <div class="pkg-row" data-name="icons fix springboard lukezgd">
+            <div class="pkg-info">
+                <div class="pkg-name">Jailbreak App Icons Fix <span class="pkg-ver">v1.0.0</span></div>
+                <div class="pkg-desc">Restores missing icons on SpringBoard.</div>
+                <div class="pkg-author">LukeZGD &bull; System &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/com.lukezgd.iconsfix.html" class="tag-btn">Depiction</a>
+                <a href="debs/com.lukezgd.iconsfix_1.0.0_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+
+        <!-- 9. Cydia Webview Modifier -->
+        <div class="pkg-row" data-name="cydia webview modifier webkit">
+            <div class="pkg-info">
+                <div class="pkg-name">Cydia Webview Modifier <span class="pkg-ver">v1.0</span></div>
+                <div class="pkg-desc">Fixes URL loading in Cydia on iOS 7.</div>
+                <div class="pkg-author">LukeZGD &bull; Tweaks &bull; iphoneos-arm</div>
+            </div>
+            <div class="pkg-actions">
+                <a href="depictions/com.lukezgd.cydiawebviewmodifier.html" class="tag-btn">Depiction</a>
+                <a href="debs/com.lukezgd.cydiawebviewmodifier_1.0_iphoneos-arm.deb" class="tag-btn deb" download>Get</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Instructions -->
+    <div class="section-title">Quick Instructions</div>
+    <div class="guide-box">
+        <ol>
+            <li>Open <strong>Cydia</strong> &rarr; <strong>Sources</strong> &rarr; <strong>Edit</strong> &rarr; <strong>Add</strong>.</li>
+            <li>Enter: <code>https://hellokhe.github.io/repo/</code></li>
+            <li>Install <strong>AppSync Unified</strong>, then reboot/respring.</li>
+            <li>Sideload apps with <strong>iFunBox</strong> or terminal <code>appinst &lt;file.ipa&gt;</code>.</li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        <p><a href="https://github.com/Hellokhe">Hellokhe</a> &bull; <a href="Release">Release</a> &bull; <a href="Packages">Packages</a> &bull; iOS 7.x Preservation</p>
+    </div>
+
     <script>
-        var currentCategory = 'all';
-
-        function copyRepoUrl() {
+        function copyUrl() {
             var url = 'https://hellokhe.github.io/repo/';
+            var btn = document.getElementById('copy-btn');
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(url).then(function() {
-                    showCopiedFeedback();
-                }).catch(function() {
-                    fallbackCopy(url);
+                    btn.innerText = 'Copied!';
+                    setTimeout(function() { btn.innerText = 'Copy'; }, 1800);
                 });
             } else {
-                fallbackCopy(url);
-            }
-        }
-
-        function fallbackCopy(text) {
-            var input = document.createElement('textarea');
-            input.value = text;
-            document.body.appendChild(input);
-            input.focus();
-            input.select();
-            try {
+                var t = document.createElement('textarea');
+                t.value = url;
+                document.body.appendChild(t);
+                t.select();
                 document.execCommand('copy');
-                showCopiedFeedback();
-            } catch (err) {
-                alert('Repo URL: ' + text);
+                document.body.removeChild(t);
+                btn.innerText = 'Copied!';
+                setTimeout(function() { btn.innerText = 'Copy'; }, 1800);
             }
-            document.body.removeChild(input);
         }
 
-        function showCopiedFeedback() {
-            var btn = document.getElementById('copy-repo-btn');
-            var originalText = btn.innerHTML;
-            btn.innerHTML = '<span>✓ Copied!</span>';
-            setTimeout(function() {
-                btn.innerHTML = originalText;
-            }, 2000);
-        }
-
-        function setCategory(cat, btn) {
-            currentCategory = cat;
-            var buttons = document.querySelectorAll('.btn-filter');
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].className = 'btn-filter';
-            }
-            btn.className = 'btn-filter active';
-            filterPackages();
-        }
-
-        function filterPackages() {
-            var searchInput = document.getElementById('pkg-search');
-            var query = (searchInput.value || '').toLowerCase().trim();
-            var cards = document.querySelectorAll('.pkg-card');
-            var visibleCount = 0;
-
-            for (var i = 0; i < cards.length; i++) {
-                var card = cards[i];
-                var cardCat = card.getAttribute('data-cat') || '';
-                var cardName = (card.getAttribute('data-name') || '').toLowerCase();
-
-                var matchesCat = (currentCategory === 'all') || (cardCat === currentCategory);
-                var matchesQuery = !query || (cardName.indexOf(query) !== -1);
-
-                if (matchesCat && matchesQuery) {
-                    card.style.display = '-webkit-flex';
-                    card.style.display = 'flex';
-                    visibleCount++;
+        function filterList() {
+            var q = (document.getElementById('search-box').value || '').toLowerCase().trim();
+            var rows = document.querySelectorAll('.pkg-row');
+            var count = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var name = rows[i].getAttribute('data-name') || '';
+                if (!q || name.indexOf(q) !== -1) {
+                    rows[i].style.display = 'flex';
+                    count++;
                 } else {
-                    card.style.display = 'none';
+                    rows[i].style.display = 'none';
                 }
             }
-
-            var countLabel = document.getElementById('package-count');
-            if (countLabel) {
-                countLabel.innerText = visibleCount + ' package' + (visibleCount === 1 ? '' : 's') + ' found';
-            }
+            document.getElementById('pkg-count').innerText = count;
         }
     </script>
 </body>
